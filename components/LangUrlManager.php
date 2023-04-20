@@ -2,9 +2,8 @@
 
 namespace app\components;
 
-use Yii;
 use yii\web\UrlManager;
-use app\modules\main\models\Lang;
+use app\modules\admin\models\Lang;
 
 class LangUrlManager extends UrlManager
 {

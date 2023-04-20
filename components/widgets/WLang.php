@@ -2,9 +2,9 @@
 
 namespace app\components\widgets;
 
-use app\modules\main\models\Lang;
+use app\modules\admin\models\Lang;
 
-class WLang extends \yii\bootstrap\Widget
+class WLang extends \yii\bootstrap5\Widget
 {
     public function init(){}
 

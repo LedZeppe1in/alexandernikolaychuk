@@ -6,7 +6,7 @@ $db = require __DIR__ . '/db.php';
 $config = [
     'id' => 'alexandernikolaychuk',
     'name' => 'Alexander Nikolaychuk',
-    'defaultRoute' => 'main/default/index',
+    'defaultRoute' => 'client/default/index',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'aliases' => [
@@ -16,8 +16,8 @@ $config = [
 
     // all site modules
     'modules' => [
-        'main' => [
-            'class' => 'app\modules\main\Module',
+        'client' => [
+            'class' => 'app\modules\client\Module',
         ],
         'admin' => [
             'class' => 'app\modules\admin\Module',
@@ -47,8 +47,15 @@ $config = [
             'showScriptName' => false,
             'class' => 'app\components\LangUrlManager',
             'rules' => [
-                'index' => 'main/default/index',
-                'sing-in' => 'main/default/sing-in'
+                'index' => 'client/default/index',
+                'biography' => 'client/default/biography',
+                'concerts' => 'client/default/concerts',
+                'media' => 'client/default/media',
+                'music' => 'client/default/music',
+                'projects' => 'client/default/projects',
+                'repertoire' => 'client/default/repertoire',
+                'contacts' => 'client/default/contacts',
+                'sing-in' => 'client/default/sing-in'
             ],
         ],
         'cache' => [
@@ -57,10 +64,10 @@ $config = [
         'user' => [
             'identityClass' => 'app\modules\admin\models\User',
             'enableAutoLogin' => true,
-            'loginUrl' => ['main/default/sing-in'],
+            'loginUrl' => ['client/default/sing-in'],
         ],
         'errorHandler' => [
-            'errorAction' => 'main/default/error',
+            'errorAction' => 'client/default/error',
         ],
         'mailer' => [
             'class' => \yii\symfonymailer\Mailer::class,

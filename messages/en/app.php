@@ -27,6 +27,7 @@ return [
     'SIDE_NAV_POSSIBLE_ACTIONS' => 'Possible actions',
 
     /* Нижний колонтитул (подвал) */
+    'FOOTER_LOGO' => 'Alexander Nikolaychuk',
     'FOOTER_POWERED_BY' => 'Powered by',
     'FOOTER_DEVELOPER' => 'Nikita Dorodnykh',
 
@@ -48,6 +49,11 @@ return [
     'ERROR_PAGE_TEXT' => 'Please contact us if you think this is a server error. Thank you.',
 
     /* Страницы клиентской части сайта */
+    /* Главная страница */
+    'HOME_PAGE_TITLE' => 'Alexander Nikolaychuk',
+    'HOME_PAGE_TEXT' => 'official website',
+    /* Страница биографии */
+    'BIOGRAPHY_PAGE_TITLE' => 'Biography',
     /* Страница концертов */
     'CONCERTS_PAGE_TITLE' => 'Concerts',
     /* Страница медиа */

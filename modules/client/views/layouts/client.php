@@ -79,14 +79,13 @@ ClientAsset::register($this);
                         <?= Yii::t('app', 'NAV_CONTACTS') ?>
                     </a>
                 </li>
-                <li>
-                    <a href="<?= Yii::$app->user->isGuest ? Url::to(['default/sing-in']) :
-                        Url::to(['default/sing-out']) ?>">
-                        <?= Yii::$app->user->isGuest ? Yii::t('app', 'NAV_SIGN_IN') :
-                            Yii::t('app', 'NAV_SIGN_OUT') . ' (' .
-                            Yii::$app->user->identity->username . ')' ?>
-                    </a>
-                </li>
+                <?php if (Yii::$app->user->isGuest)
+                    echo '<li>' . Html::a(Yii::t('app', 'NAV_SIGN_IN'), ['default/sing-in']) . '</li>';
+                else
+                    echo '<li>' . Html::a(Yii::t('app', 'NAV_ADMINISTRATION'), ['/admin/user/profile']) .
+                        '</li><li>' . Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['default/sing-out']) .
+                        '</li>';
+                ?>
                 <li>
                     <?= Html::a(Yii::$app->language == 'ru-RU' ?
                         "<figure class='icon-lang icon-en'></figure> English" :

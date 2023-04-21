@@ -10,6 +10,7 @@ return [
     'NAV_PROJECTS' => 'Projects',
     'NAV_REPERTOIRE' => 'Repertoire',
     'NAV_CONTACTS' => 'Contacts',
+    'NAV_ADMINISTRATION' => 'Administration',
     'NAV_SIGN_IN' => 'Sign in',
     'NAV_SIGN_OUT' => 'Sign out',
     /* Пункты главного меню административной части сайта */

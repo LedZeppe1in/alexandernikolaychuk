@@ -8,7 +8,7 @@ use yii\web\Controller;
 use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\modules\admin\models\User;
-use app\modules\admin\models\LoginForm;
+use app\modules\client\models\LoginForm;
 
 class DefaultController extends Controller
 {

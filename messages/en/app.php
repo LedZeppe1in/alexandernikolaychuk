@@ -11,6 +11,7 @@ return [
     'NAV_REPERTOIRE' => 'Repertoire',
     'NAV_CONTACTS' => 'Contacts',
     'NAV_SIGN_IN' => 'Sign in',
+    'NAV_SIGN_OUT' => 'Sign out',
     /* Пункты главного меню административной части сайта */
     'NAV_ADMIN_ACCOUNT' => 'Account',
     'NAV_ADMIN_SIGNED_IN_AS' => 'Signed in as',

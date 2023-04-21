@@ -2,10 +2,12 @@
 
 /* @var $this \yii\web\View */
 /* @var $content string */
+/* @var $user app\modules\admin\models\User */
 
 use yii\helpers\Url;
 use yii\helpers\Html;
 use app\assets\ClientAsset;
+use app\modules\admin\models\User;
 
 ClientAsset::register($this);
 ?>
@@ -78,9 +80,21 @@ ClientAsset::register($this);
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/sing-in']) ?>">
-                        <?= Yii::t('app', 'NAV_SIGN_IN') ?>
+                    <a href="<?= Yii::$app->user->isGuest ? Url::to(['default/sing-in']) :
+                        Url::to(['default/sing-out']) ?>">
+                        <?= Yii::$app->user->isGuest ? Yii::t('app', 'NAV_SIGN_IN') :
+                            Yii::t('app', 'NAV_SIGN_OUT') . ' (' .
+                            Yii::$app->user->identity->username . ')' ?>
                     </a>
+                </li>
+                <li>
+                    <?= Html::a(Yii::$app->language == 'ru-RU' ?
+                        "<figure class='icon-lang icon-en'></figure> English" :
+                        "<figure class='icon-lang icon-ru'></figure> Русский",
+                        Yii::$app->language == 'ru-RU' ? '/en' .
+                            Yii::$app->getRequest()->getLangUrl() : '/ru' .
+                            Yii::$app->getRequest()->getLangUrl(),
+                        ['class' => 'rd-nav-link']) ?>
                 </li>
             </ul>
         </nav>
@@ -94,7 +108,11 @@ ClientAsset::register($this);
             <div class="row footer-row">
                 <div class="col-sm-4 text-left">&copy; <?= date('Y') . ' ' .
                     Yii::t('app', 'FOOTER_LOGO') ?></div>
-                <div class="col-sm-4 text-center"></div>
+                <div class="col-sm-4 text-center">
+                    <a href="<?= User::find()->one()->youtube_link ?>"><p class="fa-brands fa-youtube fa-lg footer-icon"></p></a>
+                    <a href="<?= User::find()->one()->instagram_link ?>"><p class="fa-brands fa-instagram fa-lg footer-icon"></p></a>
+                    <a href="<?= User::find()->one()->vk_link ?>"><p class="fa-brands fa-vk fa-lg footer-icon"></p></a>
+                </div>
                 <div class="col-sm-4 text-right"><?= Yii::t('app', 'FOOTER_POWERED_BY') .
                     ' <a href="https://github.com/LedZeppe1in">' . Yii::t('app', 'FOOTER_DEVELOPER') .
                     '</a>' ?></div>

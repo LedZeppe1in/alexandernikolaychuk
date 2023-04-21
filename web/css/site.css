@@ -1,3 +1,4 @@
+/* CSS-styles by default */
 main > .container {
     padding: 70px 15px 20px;
 }
@@ -81,4 +82,33 @@ a.desc:after {
 
 .nav > li > form > button.logout:focus {
     outline: none;
+}
+
+/* Language button and images */
+#top-menu-form .lang-button {
+    padding: 2px !important;
+    border: 0 !important;
+}
+.dropdown-toggle:after {
+    content: none;
+}
+#top-menu-form ul.dropdown-menu {
+    min-width: 47px;
+}
+.icon-lang {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: middle;
+}
+.icon-ru {
+    background: url(../images/languages.png) 0 -360px;
+}
+.icon-en {
+    background: url(../images/languages.png) 0 -96px;
+}
+
+/* Icons in footer */
+.footer-icon {
+    padding-right: 10px;
 }

@@ -11,16 +11,16 @@ use yii\bootstrap5\ButtonDropdown;
         <?= ButtonDropdown::widget([
             'label' => $current->url == 'ru' ? "<figure class='icon-lang icon-ru'></figure>" :
                 "<figure class='icon-lang icon-en'></figure>",
-            'options' => [
-                'class' => 'btn-default lang-button',
+            'buttonOptions' => [
+                'class' => 'btn btn-light',
             ],
             'encodeLabel' => false,
             'dropdown' => [
                 'encodeLabels' => false,
                 'items' => [
                     [
-                        'label' => $lang->url == 'ru' ? "<figure class='icon-lang icon-ru'></figure>" :
-                            "<figure class='icon-lang icon-en'></figure>",
+                        'label' => $lang->url == 'ru' ? "<figure class='icon-lang icon-ru'></figure>" . $lang->name :
+                            "<figure class='icon-lang icon-en'></figure>" . $lang->name,
                         'url' => '/' . $lang->url . Yii::$app->getRequest()->getLangUrl()
                     ],
                 ]

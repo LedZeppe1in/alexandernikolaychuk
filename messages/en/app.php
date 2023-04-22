@@ -15,7 +15,6 @@ return [
     'NAV_SIGN_OUT' => 'Sign out',
     /* Пункты главного меню административной части сайта */
     'NAV_ADMIN_ACCOUNT' => 'Account',
-    'NAV_ADMIN_SIGNED_IN_AS' => 'Signed in as',
     'NAV_ADMIN_MY_PROFILE' => 'My profile',
     'NAV_ADMIN_MY_BIOGRAPHY' => 'My biography',
     'NAV_ADMIN_SIGN_OUT' => 'Sign out',
@@ -93,6 +92,7 @@ return [
     'USER_ADMIN_PAGE_MESSAGE_UPDATED_DATA' => 'You have successfully changed account data.',
     'USER_ADMIN_PAGE_MESSAGE_UPDATED_BIOGRAPHY' => 'You have successfully changed biography.',
     'USER_ADMIN_PAGE_MESSAGE_UPDATE_PASSWORD' => 'You have successfully changed password.',
+    'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'No results found.',
     /* Страницы администрирования концертов */
     'CONCERTS_ADMIN_PAGE_CONCERTS' => 'Concerts',
     /* Страницы администрирования медиа */

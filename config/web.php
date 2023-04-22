@@ -55,7 +55,8 @@ $config = [
                 'projects' => 'client/default/projects',
                 'repertoire' => 'client/default/repertoire',
                 'contacts' => 'client/default/contacts',
-                'sing-in' => 'client/default/sing-in'
+                'sing-in' => 'client/default/sing-in',
+                '/user/<_u:(profile|biography|update-profile|update-biography|update-password)>' => 'admin/user/<_u>',
             ],
         ],
         'cache' => [

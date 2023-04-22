@@ -154,7 +154,7 @@ class DefaultController extends Controller
 
         $model = new LoginForm();
         if ($model->load(Yii::$app->request->post()) && $model->login())
-            return $this->goBack();
+            return $this->redirect('/admin/user/profile');
 
         $model->password = '';
         return $this->render('sing-in', [

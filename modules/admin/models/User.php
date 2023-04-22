@@ -23,6 +23,8 @@ use yii\behaviors\TimestampBehavior;
  * @property string $full_name_en
  * @property string $address_ru
  * @property string $address_en
+ * @property string $biography_ru
+ * @property string $biography_en
  * @property string $email
  * @property string $phone
  * @property string $youtube_link
@@ -30,8 +32,9 @@ use yii\behaviors\TimestampBehavior;
  * @property string $facebook_link
  * @property string $twitter_link
  * @property string $vk_link
- * @property string $biography_ru
- * @property string $biography_en
+ * @property string $apple_music_link
+ * @property string $yandex_music_link
+ * @property string $spotify_link
  */
 class User extends ActiveRecord implements IdentityInterface
 {
@@ -65,8 +68,8 @@ class User extends ActiveRecord implements IdentityInterface
                 'message' => Yii::t('app', 'USER_MODEL_MESSAGE_FULL_NAME_EN')],
             [['full_name_ru', 'full_name_en'], 'string', 'min' => 5, 'max' => 100],
             [['email', 'phone'], 'string', 'max' => 255],
-            [['address_ru', 'address_en', 'youtube_link', 'instagram_link', 'facebook_link', 'twitter_link', 'vk_link'],
-                'string', 'max' => 600],
+            [['address_ru', 'address_en', 'youtube_link', 'instagram_link', 'facebook_link', 'twitter_link', 'vk_link',
+                'apple_music_link', 'yandex_music_link', 'spotify_link'], 'string', 'max' => 600],
             [['biography_ru', 'biography_en'], 'safe'],
         ];
     }
@@ -90,6 +93,8 @@ class User extends ActiveRecord implements IdentityInterface
             'full_name_en' => Yii::t('app', 'USER_MODEL_FULL_NAME_EN'),
             'address_ru' => Yii::t('app', 'USER_MODEL_ADDRESS_RU'),
             'address_en' => Yii::t('app', 'USER_MODEL_ADDRESS_EN'),
+            'biography_ru' => Yii::t('app', 'USER_MODEL_BIOGRAPHY_RU'),
+            'biography_en' => Yii::t('app', 'USER_MODEL_BIOGRAPHY_EN'),
             'email' => Yii::t('app', 'USER_MODEL_EMAIL'),
             'phone' => Yii::t('app', 'USER_MODEL_PHONE'),
             'youtube_link' => Yii::t('app', 'USER_MODEL_YOUTUBE_LINK'),
@@ -97,8 +102,9 @@ class User extends ActiveRecord implements IdentityInterface
             'facebook_link' => Yii::t('app', 'USER_MODEL_FACEBOOK_LINK'),
             'twitter_link' => Yii::t('app', 'USER_MODEL_TWITTER_LINK'),
             'vk_link' => Yii::t('app', 'USER_MODEL_VK_LINK'),
-            'biography_ru' => Yii::t('app', 'USER_MODEL_BIOGRAPHY_RU'),
-            'biography_en' => Yii::t('app', 'USER_MODEL_BIOGRAPHY_EN'),
+            'apple_music_link' => Yii::t('app', 'USER_MODEL_APPLE_MUSIC_LINK'),
+            'yandex_music_link' => Yii::t('app', 'USER_MODEL_YANDEX_MUSIC_LINK'),
+            'spotify_link' => Yii::t('app', 'USER_MODEL_SPOTIFY_LINK'),
         ];
     }
 

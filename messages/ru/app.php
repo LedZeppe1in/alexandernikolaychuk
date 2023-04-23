@@ -41,6 +41,9 @@ return [
     'BUTTON_DELETE' => 'Удалить',
     'BUTTON_CANCEL' => 'Отмена',
 
+    /* Общие сообщения */
+    'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'Ничего не найдено.',
+
     /* Общие сообщения об ошибках */
     'ERROR_MESSAGE_PAGE_NOT_FOUND' => 'Страница не найдена.',
     'ERROR_MESSAGE_ACCESS_DENIED' => 'Вам не разрешено производить данное действие.',
@@ -92,7 +95,6 @@ return [
     'USER_ADMIN_PAGE_MESSAGE_UPDATED_DATA' => 'Вы успешно обновили личные данные.',
     'USER_ADMIN_PAGE_MESSAGE_UPDATED_BIOGRAPHY' => 'Вы успешно обновили биографию.',
     'USER_ADMIN_PAGE_MESSAGE_UPDATE_PASSWORD' => 'Вы успешно обновили пароль.',
-    'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'Ничего не найдено.',
     /* Страницы администрирования концертов */
     'CONCERTS_ADMIN_PAGE_CONCERTS' => 'Концерты',
     /* Страницы администрирования медиа */

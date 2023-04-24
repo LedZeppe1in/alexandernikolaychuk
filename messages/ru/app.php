@@ -161,4 +161,24 @@ return [
     'USER_MODEL_MESSAGE_UPDATED_YOUR_PASSWORD' => 'Вы успешно изменили пароль.',
     'USER_MODEL_MESSAGE_FULL_NAME_RU' => 'Ваша фамилия, имя, отчество должны быть на русском языке.',
     'USER_MODEL_MESSAGE_FULL_NAME_EN' => 'Ваша фамилия, имя, отчество должны быть на английском языке.',
+    /* Concert */
+    'CONCERT_MODEL_ID' => 'ID',
+    'CONCERT_MODEL_CREATED_AT' => 'Создан',
+    'CONCERT_MODEL_UPDATED_AT' => 'Обновлен',
+    'CONCERT_MODEL_NAME' => 'Название',
+    'CONCERT_MODEL_POSTER' => 'Афиша',
+    'CONCERT_MODEL_LINKS' => 'Ссылки',
+    /* MusicAlbum */
+    'MUSIC_ALBUM_MODEL_ID' => 'ID',
+    'MUSIC_ALBUM_MODEL_CREATED_AT' => 'Создан',
+    'MUSIC_ALBUM_MODEL_UPDATED_AT' => 'Обновлен',
+    'MUSIC_ALBUM_MODEL_NAME' => 'Название',
+    'MUSIC_ALBUM_MODEL_TYPE' => 'Тип',
+    'MUSIC_ALBUM_MODEL_COVER' => 'Обложка',
+    'MUSIC_ALBUM_MODEL_LINKS' => 'Ссылки',
+    'MUSIC_ALBUM_MODEL_DESCRIPTION' => 'Описание',
+    'MUSIC_ALBUM_MODEL_AUTHOR' => 'Авторы',
+    /* Значения полей модели MusicAlbum */
+    'MUSIC_ALBUM_MODEL_AUTHOR_TYPE' => 'Авторский',
+    'MUSIC_ALBUM_MODEL_PROJECT_TYPE' => 'Проектный',
 ];

@@ -200,4 +200,9 @@ return [
     /* Значения полей модели Photo */
     'PHOTO_MODEL_AUTHOR_TYPE' => 'Author',
     'PHOTO_MODEL_PROJECT_TYPE' => 'Project',
+    /* Video */
+    'VIDEO_MODEL_ID' => 'ID',
+    'VIDEO_MODEL_CREATED_AT' => 'Created at',
+    'VIDEO_MODEL_UPDATED_AT' => 'Updated at',
+    'VIDEO_MODEL_LINK' => 'Link',
 ];

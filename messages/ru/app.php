@@ -205,4 +205,23 @@ return [
     'VIDEO_MODEL_CREATED_AT' => 'Создано',
     'VIDEO_MODEL_UPDATED_AT' => 'Обновлено',
     'VIDEO_MODEL_LINK' => 'Ссылка',
+    /* Project */
+    'PROJECT_MODEL_ID' => 'ID',
+    'PROJECT_MODEL_CREATED_AT' => 'Создан',
+    'PROJECT_MODEL_UPDATED_AT' => 'Обновлен',
+    'PROJECT_MODEL_NAME' => 'Название',
+    'PROJECT_MODEL_DESCRIPTION' => 'Описание',
+    'PROJECT_MODEL_POSTER' => 'Постер',
+    /* ProjectAlbum */
+    'PROJECT_ALBUM_MODEL_ID' => 'ID',
+    'PROJECT_ALBUM_MODEL_CREATED_AT' => 'Создан',
+    'PROJECT_ALBUM_MODEL_UPDATED_AT' => 'Обновлен',
+    'PROJECT_ALBUM_MODEL_PROJECT' => 'Проект',
+    'PROJECT_ALBUM_MODEL_MUSIC_ALBUM' => 'Музыкальный альбом',
+    /* ProjectPhoto */
+    'PROJECT_PHOTO_MODEL_ID' => 'ID',
+    'PROJECT_PHOTO_MODEL_CREATED_AT' => 'Создан',
+    'PROJECT_PHOTO_MODEL_UPDATED_AT' => 'Обновлен',
+    'PROJECT_PHOTO_MODEL_PROJECT' => 'Проект',
+    'PROJECT_PHOTO_MODEL_PHOTO' => 'Фото',
 ];

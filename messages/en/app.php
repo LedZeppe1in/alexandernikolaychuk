@@ -205,4 +205,23 @@ return [
     'VIDEO_MODEL_CREATED_AT' => 'Created at',
     'VIDEO_MODEL_UPDATED_AT' => 'Updated at',
     'VIDEO_MODEL_LINK' => 'Link',
+    /* Project */
+    'PROJECT_MODEL_ID' => 'ID',
+    'PROJECT_MODEL_CREATED_AT' => 'Created at',
+    'PROJECT_MODEL_UPDATED_AT' => 'Updated at',
+    'PROJECT_MODEL_NAME' => 'Name',
+    'PROJECT_MODEL_DESCRIPTION' => 'Description',
+    'PROJECT_MODEL_POSTER' => 'Poster',
+    /* ProjectAlbum */
+    'PROJECT_ALBUM_MODEL_ID' => 'ID',
+    'PROJECT_ALBUM_MODEL_CREATED_AT' => 'Created at',
+    'PROJECT_ALBUM_MODEL_UPDATED_AT' => 'Updated at',
+    'PROJECT_ALBUM_MODEL_PROJECT' => 'Project',
+    'PROJECT_ALBUM_MODEL_MUSIC_ALBUM' => 'Music album',
+    /* ProjectPhoto */
+    'PROJECT_PHOTO_MODEL_ID' => 'ID',
+    'PROJECT_PHOTO_MODEL_CREATED_AT' => 'Created at',
+    'PROJECT_PHOTO_MODEL_UPDATED_AT' => 'Updated at',
+    'PROJECT_PHOTO_MODEL_PROJECT' => 'Project',
+    'PROJECT_PHOTO_MODEL_PHOTO' => 'Photo',
 ];

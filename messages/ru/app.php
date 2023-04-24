@@ -181,4 +181,14 @@ return [
     /* Значения полей модели MusicAlbum */
     'MUSIC_ALBUM_MODEL_AUTHOR_TYPE' => 'Авторский',
     'MUSIC_ALBUM_MODEL_PROJECT_TYPE' => 'Проектный',
+    /* Repertoire */
+    'REPERTOIRE_MODEL_ID' => 'ID',
+    'REPERTOIRE_MODEL_CREATED_AT' => 'Создан',
+    'REPERTOIRE_MODEL_UPDATED_AT' => 'Обновлен',
+    'REPERTOIRE_MODEL_NAME' => 'Название',
+    'REPERTOIRE_MODEL_TYPE' => 'Тип',
+    'REPERTOIRE_MODEL_COMPOSITION_LIST' => 'Список произведений',
+    /* Значения полей модели Repertoire */
+    'REPERTOIRE_MODEL_CONCERT_TYPE' => 'Концертные программы',
+    'REPERTOIRE_MODEL_ORCHESTRA_TYPE' => 'Репертуар с оркестром',
 ];

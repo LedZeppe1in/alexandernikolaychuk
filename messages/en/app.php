@@ -181,4 +181,14 @@ return [
     /* Значения полей модели MusicAlbum */
     'MUSIC_ALBUM_MODEL_AUTHOR_TYPE' => 'Author',
     'MUSIC_ALBUM_MODEL_PROJECT_TYPE' => 'Project',
+    /* Repertoire */
+    'REPERTOIRE_MODEL_ID' => 'ID',
+    'REPERTOIRE_MODEL_CREATED_AT' => 'Created at',
+    'REPERTOIRE_MODEL_UPDATED_AT' => 'Updated at',
+    'REPERTOIRE_MODEL_NAME' => 'Name',
+    'REPERTOIRE_MODEL_TYPE' => 'Type',
+    'REPERTOIRE_MODEL_COMPOSITION_LIST' => 'Composition list',
+    /* Значения полей модели Repertoire */
+    'REPERTOIRE_MODEL_CONCERT_TYPE' => 'Concert programs',
+    'REPERTOIRE_MODEL_ORCHESTRA_TYPE' => 'Repertoire with orchestra',
 ];

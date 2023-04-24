@@ -191,4 +191,13 @@ return [
     /* Значения полей модели Repertoire */
     'REPERTOIRE_MODEL_CONCERT_TYPE' => 'Концертные программы',
     'REPERTOIRE_MODEL_ORCHESTRA_TYPE' => 'Репертуар с оркестром',
+    /* Photo */
+    'PHOTO_MODEL_ID' => 'ID',
+    'PHOTO_MODEL_CREATED_AT' => 'Создано',
+    'PHOTO_MODEL_UPDATED_AT' => 'Обновлено',
+    'PHOTO_MODEL_FILE' => 'Файл',
+    'PHOTO_MODEL_TYPE' => 'Тип',
+    /* Значения полей модели Photo */
+    'PHOTO_MODEL_AUTHOR_TYPE' => 'Авторское',
+    'PHOTO_MODEL_PROJECT_TYPE' => 'Проектное',
 ];

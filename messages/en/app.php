@@ -109,14 +109,25 @@ return [
     'CONCERTS_ADMIN_PAGE_MESSAGE_CREATE_CONCERT' => 'You have successfully created a new concert.',
     'CONCERTS_ADMIN_PAGE_MESSAGE_UPDATED_CONCERT' => 'You have successfully updated concert.',
     'CONCERTS_ADMIN_PAGE_MESSAGE_DELETED_CONCERT' => 'You have successfully deleted concert.',
-    /* Страницы администрирования медиа */
-    'MEDIA_ADMIN_PAGE_MEDIA' => 'Media',
+    /* Страницы администрирования фото */
+    'PHOTO_ADMIN_PAGE_PHOTO' => 'Photo',
+    /* Страницы администрирования видео */
+    'VIDEO_ADMIN_PAGE_VIDEO' => 'Video',
     /* Страницы администрирования музыки */
     'MUSIC_ADMIN_PAGE_MUSIC' => 'Music',
     /* Страницы администрирования проектов */
     'PROJECTS_ADMIN_PAGE_PROJECTS' => 'Projects',
-    /* Страницы администрирования проектов */
+    /* Страницы администрирования репертуара */
     'REPERTOIRE_ADMIN_PAGE_REPERTOIRE' => 'Repertoire',
+    'REPERTOIRE_ADMIN_PAGE_CREATE_REPERTOIRE' => 'Create repertoire',
+    'REPERTOIRE_ADMIN_PAGE_VIEW_REPERTOIRE' => 'View repertoire',
+    'REPERTOIRE_ADMIN_PAGE_UPDATE_REPERTOIRE' => 'Update repertoire',
+    'REPERTOIRE_ADMIN_PAGE_DELETE_REPERTOIRE' => 'Delete repertoire',
+    'REPERTOIRE_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Are you sure that you want to delete this repertoire?',
+    /* Сообщения на страницах администрирования репертуара */
+    'REPERTOIRE_ADMIN_PAGE_MESSAGE_CREATE_REPERTOIRE' => 'You have successfully created a new repertoire.',
+    'REPERTOIRE_ADMIN_PAGE_MESSAGE_UPDATED_REPERTOIRE' => 'You have successfully updated repertoire.',
+    'REPERTOIRE_ADMIN_PAGE_MESSAGE_DELETED_REPERTOIRE' => 'You have successfully deleted repertoire.',
 
     /* Формы */
     /* ContactForm */

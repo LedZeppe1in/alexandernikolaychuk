@@ -109,14 +109,25 @@ return [
     'CONCERTS_ADMIN_PAGE_MESSAGE_CREATE_CONCERT' => 'Вы успешно создали новый концерт.',
     'CONCERTS_ADMIN_PAGE_MESSAGE_UPDATED_CONCERT' => 'Вы успешно обновили данный концерт.',
     'CONCERTS_ADMIN_PAGE_MESSAGE_DELETED_CONCERT' => 'Вы успешно удалили концерт.',
-    /* Страницы администрирования медиа */
-    'MEDIA_ADMIN_PAGE_MEDIA' => 'Медиа',
+    /* Страницы администрирования фото */
+    'PHOTO_ADMIN_PAGE_PHOTO' => 'Фото',
+    /* Страницы администрирования видео */
+    'VIDEO_ADMIN_PAGE_VIDEO' => 'Видео',
     /* Страницы администрирования музыки */
     'MUSIC_ADMIN_PAGE_MUSIC' => 'Музыка',
     /* Страницы администрирования проектов */
     'PROJECTS_ADMIN_PAGE_PROJECTS' => 'Проекты',
-    /* Страницы администрирования проектов */
+    /* Страницы администрирования репертуара */
     'REPERTOIRE_ADMIN_PAGE_REPERTOIRE' => 'Репертуар',
+    'REPERTOIRE_ADMIN_PAGE_CREATE_REPERTOIRE' => 'Создать репертуар',
+    'REPERTOIRE_ADMIN_PAGE_VIEW_REPERTOIRE' => 'Просмотр репертуара',
+    'REPERTOIRE_ADMIN_PAGE_UPDATE_REPERTOIRE' => 'Изменить репертуар',
+    'REPERTOIRE_ADMIN_PAGE_DELETE_REPERTOIRE' => 'Удалить репертуар',
+    'REPERTOIRE_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Вы уверены, что хотите удалить данный репертуар?',
+    /* Сообщения на страницах администрирования репертуара */
+    'REPERTOIRE_ADMIN_PAGE_MESSAGE_CREATE_REPERTOIRE' => 'Вы успешно создали новый репертуар.',
+    'REPERTOIRE_ADMIN_PAGE_MESSAGE_UPDATED_REPERTOIRE' => 'Вы успешно обновили данный репертуар.',
+    'REPERTOIRE_ADMIN_PAGE_MESSAGE_DELETED_REPERTOIRE' => 'Вы успешно удалили репертуар.',
 
     /* Формы */
     /* ContactForm */

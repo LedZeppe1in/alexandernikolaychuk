@@ -103,7 +103,6 @@ class ConcertController extends Controller
                         // Сохранение файла афишы на сервере
                         $model->poster_file->saveAs($dir . $fileName);
                     }
-                    // Вывод сообщения
                     Yii::$app->getSession()->setFlash('success',
                         Yii::t('app', 'CONCERTS_ADMIN_PAGE_MESSAGE_CREATE_CONCERT'));
 

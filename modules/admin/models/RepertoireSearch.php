@@ -69,7 +69,7 @@ class RepertoireSearch extends Repertoire
         ]);
 
         $query->andFilterWhere(['ilike', 'name', $this->name])
-            ->andFilterWhere(['ilike', 'composition_list ', $this->composition_list ]);
+            ->andFilterWhere(['ilike', 'composition_list', $this->composition_list ]);
 
         return $dataProvider;
     }

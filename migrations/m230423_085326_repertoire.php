@@ -19,7 +19,7 @@ class m230423_085326_repertoire extends Migration
             'updated_at' => $this->integer()->notNull(),
             'name' => $this->string()->notNull(),
             'type' => $this->smallInteger()->notNull()->defaultValue(0),
-            'composition_list ' => $this->text()->notNull(),
+            'composition_list' => $this->text()->notNull(),
         ], $tableOptions);
 
         $this->createIndex('idx_repertoire_name', '{{%repertoire}}', 'name');

@@ -14,7 +14,7 @@ use yii\helpers\ArrayHelper;
  * @property int $updated_at
  * @property string $name
  * @property int $type
- * @property string $composition_list 
+ * @property string $composition_list
  */
 class Repertoire extends \yii\db\ActiveRecord
 {
@@ -52,7 +52,7 @@ class Repertoire extends \yii\db\ActiveRecord
             'updated_at' => Yii::t('app', 'REPERTOIRE_MODEL_UPDATED_AT'),
             'name' => Yii::t('app', 'REPERTOIRE_MODEL_NAME'),
             'type' => Yii::t('app', 'REPERTOIRE_MODEL_TYPE'),
-            'composition_list ' => Yii::t('app', 'REPERTOIRE_MODEL_COMPOSITION_LIST')
+            'composition_list' => Yii::t('app', 'REPERTOIRE_MODEL_COMPOSITION_LIST')
         ];
     }
 

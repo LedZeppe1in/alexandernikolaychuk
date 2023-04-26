@@ -17,12 +17,35 @@ use yii\behaviors\TimestampBehavior;
  */
 class Concert extends \yii\db\ActiveRecord
 {
+    public $poster_file;  // Файл афишы
+
     /**
      * @return string table name
      */
     public static function tableName()
     {
         return '{{%concert}}';
+    }
+
+    /**
+     * Validation rule.
+     *
+     * @param $attribute_name
+     * @param $params
+     */
+    public function either($attribute_name, $params)
+    {
+        if (!empty($this->$attribute_name))
+            return;
+        if (!is_array($params['other']))
+            $params['other'] = [$params['other']];
+        foreach($params['other'] as $field)
+            if(!empty($this->$field))
+                return;
+        $fieldsLabels = [$this->getAttributeLabel($attribute_name)];
+        foreach($params['other'] as $field)
+            $fieldsLabels[] = $this->getAttributeLabel($field);
+        $this->addError($attribute_name, Yii::t('app', 'CONCERT_MODEL_MESSAGE_REQUIRED'));
     }
 
     /**
@@ -33,6 +56,9 @@ class Concert extends \yii\db\ActiveRecord
         return [
             [['poster', 'links'], 'string'],
             [['name'], 'string', 'max' => 255],
+            ['name', 'either', 'skipOnEmpty'=>false, 'params' => ['other' => 'poster_file']],
+            ['poster_file', 'either', 'skipOnEmpty'=>false, 'params' => ['other' => 'name']],
+            ['poster_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
 
@@ -48,6 +74,7 @@ class Concert extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'CONCERT_MODEL_NAME'),
             'poster' => Yii::t('app', 'CONCERT_MODEL_POSTER'),
             'links' => Yii::t('app', 'CONCERT_MODEL_LINKS'),
+            'poster_file' => Yii::t('app', 'CONCERT_MODEL_POSTER'),
         ];
     }
 

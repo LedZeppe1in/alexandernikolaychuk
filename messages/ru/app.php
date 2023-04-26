@@ -20,6 +20,8 @@ return [
     'NAV_ADMIN_SIGN_OUT' => 'Выход',
     'NAV_ADMIN_CONCERTS' => 'Концерты',
     'NAV_ADMIN_MEDIA' => 'Медиа',
+    'NAV_ADMIN_PHOTO' => 'Фото',
+    'NAV_ADMIN_VIDEO' => 'Видео',
     'NAV_ADMIN_MUSIC' => 'Музыка',
     'NAV_ADMIN_PROJECTS' => 'Проекты',
     'NAV_ADMIN_REPERTOIRE' => 'Репертуар',
@@ -96,7 +98,17 @@ return [
     'USER_ADMIN_PAGE_MESSAGE_UPDATED_BIOGRAPHY' => 'Вы успешно обновили биографию.',
     'USER_ADMIN_PAGE_MESSAGE_UPDATE_PASSWORD' => 'Вы успешно обновили пароль.',
     /* Страницы администрирования концертов */
+    'CONCERTS_ADMIN_PAGE_CONCERT' => 'Концерт',
     'CONCERTS_ADMIN_PAGE_CONCERTS' => 'Концерты',
+    'CONCERTS_ADMIN_PAGE_CREATE_CONCERT' => 'Создать концерт',
+    'CONCERTS_ADMIN_PAGE_VIEW_CONCERT' => 'Просмотр концерта',
+    'CONCERTS_ADMIN_PAGE_UPDATE_CONCERT' => 'Изменить концерт',
+    'CONCERTS_ADMIN_PAGE_DELETE_CONCERT' => 'Удалить концерт',
+    'CONCERTS_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Вы уверены, что хотите удалить данный концерт?',
+    /* Сообщения на страницах администрирования концертов */
+    'CONCERTS_ADMIN_PAGE_MESSAGE_CREATE_CONCERT' => 'Вы успешно создали новый концерт.',
+    'CONCERTS_ADMIN_PAGE_MESSAGE_UPDATED_CONCERT' => 'Вы успешно обновили данный концерт.',
+    'CONCERTS_ADMIN_PAGE_MESSAGE_DELETED_CONCERT' => 'Вы успешно удалили концерт.',
     /* Страницы администрирования медиа */
     'MEDIA_ADMIN_PAGE_MEDIA' => 'Медиа',
     /* Страницы администрирования музыки */
@@ -168,6 +180,8 @@ return [
     'CONCERT_MODEL_NAME' => 'Название',
     'CONCERT_MODEL_POSTER' => 'Афиша',
     'CONCERT_MODEL_LINKS' => 'Ссылки',
+    /* Сообщения модели Concert */
+    'CONCERT_MODEL_MESSAGE_REQUIRED' => 'Требуется либо название, либо афиша.',
     /* MusicAlbum */
     'MUSIC_ALBUM_MODEL_ID' => 'ID',
     'MUSIC_ALBUM_MODEL_CREATED_AT' => 'Создан',

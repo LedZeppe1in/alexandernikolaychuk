@@ -57,6 +57,8 @@ $config = [
                 'contacts' => 'client/default/contacts',
                 'sing-in' => 'client/default/sing-in',
                 '/user/<_u:(profile|biography|update-profile|update-biography|update-password)>' => 'admin/user/<_u>',
+                '/concert/<_cn:(list|create)>' => 'admin/concert/<_cn>',
+                '/concert/<_cn:(view|update|delete)>/<id:\d+>' => 'admin/concert/<_cn>',
             ],
         ],
         'cache' => [

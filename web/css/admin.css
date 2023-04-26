@@ -152,3 +152,30 @@ form#export-file-form {
         padding: 10px 15px;
     }
 }
+
+/* Logo */
+.logo {
+    height: 100px;
+    max-width: 100%;
+    margin-top: -70px;
+    margin-bottom: -70px;
+}
+
+/* Отображение фото */
+.image-block {
+    border: 1px solid #e3edee;
+    background-color: #e3edee;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    height: auto;
+    overflow: hidden;
+    width: 50%;
+}
+
+.image-td {
+    display: block;
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}

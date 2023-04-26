@@ -51,10 +51,15 @@ AppAsset::register($this);
                             'url' => ['/client/default/sing-out'], 'linkOptions' => ['data-method' => 'post']],
                     ]
                 ],
-                ['label' => Yii::t('app', 'NAV_ADMIN_CONCERTS'), 'url' => ['/admin/concerts/list']],
-                ['label' => Yii::t('app', 'NAV_ADMIN_MEDIA'), 'url' => ['/admin/media/list']],
+                ['label' => Yii::t('app', 'NAV_ADMIN_MEDIA'),
+                    'items' => [
+                        ['label' => Yii::t('app', 'NAV_ADMIN_PHOTO'), 'url' => ['/admin/photo/list']],
+                        ['label' => Yii::t('app', 'NAV_ADMIN_VIDEO'), 'url' => ['/admin/video/list']]
+                    ]
+                ],
+                ['label' => Yii::t('app', 'NAV_ADMIN_CONCERTS'), 'url' => ['/admin/concert/list']],
                 ['label' => Yii::t('app', 'NAV_ADMIN_MUSIC'), 'url' => ['/admin/music/list']],
-                ['label' => Yii::t('app', 'NAV_ADMIN_PROJECTS'), 'url' => ['/admin/projects/list']],
+                ['label' => Yii::t('app', 'NAV_ADMIN_PROJECTS'), 'url' => ['/admin/project/list']],
                 ['label' => Yii::t('app', 'NAV_ADMIN_REPERTOIRE'), 'url' => ['/admin/repertoire/list']]
             ],
         ]);

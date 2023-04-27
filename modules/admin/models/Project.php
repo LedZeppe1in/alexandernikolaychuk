@@ -20,6 +20,8 @@ use yii\behaviors\TimestampBehavior;
  */
 class Project extends \yii\db\ActiveRecord
 {
+    public $poster_file;  // Файл постера
+
     /**
      * @return string table name
      */
@@ -37,6 +39,7 @@ class Project extends \yii\db\ActiveRecord
             [['name'], 'required'],
             [['description', 'poster'], 'string'],
             [['name'], 'string', 'max' => 255],
+            ['poster_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
 
@@ -52,6 +55,7 @@ class Project extends \yii\db\ActiveRecord
             'name' => Yii::t('app', 'PROJECT_MODEL_NAME'),
             'description' => Yii::t('app', 'PROJECT_MODEL_DESCRIPTION'),
             'poster' => Yii::t('app', 'PROJECT_MODEL_POSTER'),
+            'poster_file' => Yii::t('app', 'PROJECT_MODEL_POSTER'),
         ];
     }
 

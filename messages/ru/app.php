@@ -145,7 +145,17 @@ return [
     'MUSIC_ADMIN_PAGE_MESSAGE_UPDATED_MUSIC_ALBUM' => 'Вы успешно обновили данный музыкальный альбом.',
     'MUSIC_ADMIN_PAGE_MESSAGE_DELETED_MUSIC_ALBUM' => 'Вы успешно удалили музыкальный альбом.',
     /* Страницы администрирования проектов */
+    'PROJECTS_ADMIN_PAGE_PROJECT' => 'Проект',
     'PROJECTS_ADMIN_PAGE_PROJECTS' => 'Проекты',
+    'PROJECTS_ADMIN_PAGE_CREATE_PROJECT' => 'Создать проект',
+    'PROJECTS_ADMIN_PAGE_VIEW_PROJECT' => 'Просмотр проекта',
+    'PROJECTS_ADMIN_PAGE_UPDATE_PROJECT' => 'Изменить проект',
+    'PROJECTS_ADMIN_PAGE_DELETE_PROJECT' => 'Удалить проект',
+    'PROJECTS_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Вы уверены, что хотите удалить данный проект?',
+    /* Сообщения на страницах администрирования проектов */
+    'PROJECTS_ADMIN_PAGE_MESSAGE_CREATE_PROJECT' => 'Вы успешно создали новый проект.',
+    'PROJECTS_ADMIN_PAGE_MESSAGE_UPDATED_PROJECT' => 'Вы успешно обновили данный проект.',
+    'PROJECTS_ADMIN_PAGE_MESSAGE_DELETED_PROJECT' => 'Вы успешно удалили проект.',
     /* Страницы администрирования репертуара */
     'REPERTOIRE_ADMIN_PAGE_REPERTOIRE' => 'Репертуар',
     'REPERTOIRE_ADMIN_PAGE_CREATE_REPERTOIRE' => 'Создать репертуар',

@@ -65,6 +65,8 @@ $config = [
                 '/concert/<_cn:(view|update|delete)>/<id:\d+>' => 'admin/concert/<_cn>',
                 '/music-album/<_ma:(list|create)>' => 'admin/music-album/<_ma>',
                 '/music-album/<_ma:(view|update|delete)>/<id:\d+>' => 'admin/music-album/<_ma>',
+                '/project/<_pj:(list|create)>' => 'admin/project/<_pj>',
+                '/project/<_pj:(view|update|delete)>/<id:\d+>' => 'admin/project/<_pj>',
                 '/repertoire/<_rp:(list|create)>' => 'admin/repertoire/<_rp>',
                 '/repertoire/<_rp:(view|update|delete)>/<id:\d+>' => 'admin/repertoire/<_rp>',
             ],

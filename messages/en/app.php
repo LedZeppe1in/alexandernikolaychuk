@@ -145,7 +145,17 @@ return [
     'MUSIC_ADMIN_PAGE_MESSAGE_UPDATED_MUSIC_ALBUM' => 'You have successfully updated music album.',
     'MUSIC_ADMIN_PAGE_MESSAGE_DELETED_MUSIC_ALBUM' => 'You have successfully deleted music album.',
     /* Страницы администрирования проектов */
+    'PROJECTS_ADMIN_PAGE_PROJECT' => 'Project',
     'PROJECTS_ADMIN_PAGE_PROJECTS' => 'Projects',
+    'PROJECTS_ADMIN_PAGE_CREATE_PROJECT' => 'Create project',
+    'PROJECTS_ADMIN_PAGE_VIEW_PROJECT' => 'View project',
+    'PROJECTS_ADMIN_PAGE_UPDATE_PROJECT' => 'Update project',
+    'PROJECTS_ADMIN_PAGE_DELETE_PROJECT' => 'Delete project',
+    'PROJECTS_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Are you sure that you want to delete this project?',
+    /* Сообщения на страницах администрирования проектов */
+    'PROJECTS_ADMIN_PAGE_MESSAGE_CREATE_PROJECT' => 'You have successfully created a new project.',
+    'PROJECTS_ADMIN_PAGE_MESSAGE_UPDATED_PROJECT' => 'You have successfully updated project.',
+    'PROJECTS_ADMIN_PAGE_MESSAGE_DELETED_PROJECT' => 'You have successfully deleted project.',
     /* Страницы администрирования репертуара */
     'REPERTOIRE_ADMIN_PAGE_REPERTOIRE' => 'Repertoire',
     'REPERTOIRE_ADMIN_PAGE_CREATE_REPERTOIRE' => 'Create repertoire',

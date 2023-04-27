@@ -123,6 +123,15 @@ return [
     'PHOTO_ADMIN_PAGE_MESSAGE_DELETED_PHOTO' => 'Вы успешно удалили фотографию.',
     /* Страницы администрирования видео */
     'VIDEO_ADMIN_PAGE_VIDEO' => 'Видео',
+    'VIDEO_ADMIN_PAGE_CREATE_VIDEO' => 'Создать видео',
+    'VIDEO_ADMIN_PAGE_VIEW_VIDEO' => 'Просмотр видео',
+    'VIDEO_ADMIN_PAGE_UPDATE_VIDEO' => 'Изменить видео',
+    'VIDEO_ADMIN_PAGE_DELETE_VIDEO' => 'Удалить видео',
+    'VIDEO_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Вы уверены, что хотите удалить данное видео?',
+    /* Сообщения на страницах администрирования видео */
+    'VIDEO_ADMIN_PAGE_MESSAGE_CREATE_VIDEO' => 'Вы успешно создали новое видео.',
+    'VIDEO_ADMIN_PAGE_MESSAGE_UPDATED_VIDEO' => 'Вы успешно обновили данное видео.',
+    'VIDEO_ADMIN_PAGE_MESSAGE_DELETED_VIDEO' => 'Вы успешно удалили видео.',
     /* Страницы администрирования музыки */
     'MUSIC_ADMIN_PAGE_MUSIC_ALBUM' => 'Музыкальный альбом',
     'MUSIC_ADMIN_PAGE_MUSIC_ALBUMS' => 'Музыкальные альбомы',

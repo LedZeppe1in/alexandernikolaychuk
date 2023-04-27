@@ -123,6 +123,15 @@ return [
     'PHOTO_ADMIN_PAGE_MESSAGE_DELETED_PHOTO' => 'You have successfully deleted photo.',
     /* Страницы администрирования видео */
     'VIDEO_ADMIN_PAGE_VIDEO' => 'Video',
+    'VIDEO_ADMIN_PAGE_CREATE_VIDEO' => 'Create video',
+    'VIDEO_ADMIN_PAGE_VIEW_VIDEO' => 'View video',
+    'VIDEO_ADMIN_PAGE_UPDATE_VIDEO' => 'Update video',
+    'VIDEO_ADMIN_PAGE_DELETE_VIDEO' => 'Delete video',
+    'VIDEO_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Are you sure that you want to delete this video?',
+    /* Сообщения на страницах администрирования видео */
+    'VIDEO_ADMIN_PAGE_MESSAGE_CREATE_VIDEO' => 'You have successfully created a new video.',
+    'VIDEO_ADMIN_PAGE_MESSAGE_UPDATED_VIDEO' => 'You have successfully updated video.',
+    'VIDEO_ADMIN_PAGE_MESSAGE_DELETED_VIDEO' => 'You have successfully deleted video.',
     /* Страницы администрирования музыки */
     'MUSIC_ADMIN_PAGE_MUSIC_ALBUM' => 'Music album',
     'MUSIC_ADMIN_PAGE_MUSIC_ALBUMS' => 'Music albums',

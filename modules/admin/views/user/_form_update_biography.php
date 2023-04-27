@@ -20,12 +20,12 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->field($model, 'biography_ru')->widget(CKEditor::className(), [
         'options' => ['rows' => 10],
-        'preset' => 'basic'
+        'preset' => 'full'
     ]) ?>
 
     <?= $form->field($model, 'biography_en')->widget(CKEditor::className(), [
         'options' => ['rows' => 10],
-        'preset' => 'basic'
+        'preset' => 'full'
     ]) ?>
 
     <div class="form-group">

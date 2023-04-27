@@ -108,9 +108,21 @@ ClientAsset::register($this);
                 <div class="col-sm-4 text-left">&copy; <?= date('Y') . ' ' .
                     Yii::t('app', 'FOOTER_LOGO') ?></div>
                 <div class="col-sm-4 text-center">
-                    <a href="<?= User::find()->one()->youtube_link ?>"><p class="fa-brands fa-youtube fa-lg footer-icon"></p></a>
-                    <a href="<?= User::find()->one()->instagram_link ?>"><p class="fa-brands fa-instagram fa-lg footer-icon"></p></a>
-                    <a href="<?= User::find()->one()->vk_link ?>"><p class="fa-brands fa-vk fa-lg footer-icon"></p></a>
+                    <?php if (User::find()->one()->youtube_link): ?>
+                        <a href="<?= User::find()->one()->youtube_link ?>"><p class="fa-brands fa-youtube fa-lg footer-icon"></p></a>
+                    <?php endif; ?>
+                    <?php if (User::find()->one()->instagram_link): ?>
+                        <a href="<?= User::find()->one()->instagram_link ?>"><p class="fa-brands fa-instagram fa-lg footer-icon"></p></a>
+                    <?php endif; ?>
+                    <?php if (User::find()->one()->facebook_link): ?>
+                        <a href="<?= User::find()->one()->facebook_link ?>"><p class="fa-brands fa-facebook fa-lg footer-icon"></p></a>
+                    <?php endif; ?>
+                    <?php if (User::find()->one()->twitter_link): ?>
+                        <a href="<?= User::find()->one()->twitter_link ?>"><p class="fa-brands fa-twitter fa-lg footer-icon"></p></a>
+                    <?php endif; ?>
+                    <?php if (User::find()->one()->vk_link): ?>
+                        <a href="<?= User::find()->one()->vk_link ?>"><p class="fa-brands fa-vk fa-lg footer-icon"></p></a>
+                    <?php endif; ?>
                 </div>
                 <div class="col-sm-4 text-right"><?= Yii::t('app', 'FOOTER_POWERED_BY') .
                     ' <a href="https://github.com/LedZeppe1in">' . Yii::t('app', 'FOOTER_DEVELOPER') .

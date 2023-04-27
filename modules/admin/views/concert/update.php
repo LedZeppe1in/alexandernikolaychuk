@@ -1,9 +1,9 @@
 <?php
 
-use yii\helpers\Html;
-
 /** @var yii\web\View $this */
 /** @var app\modules\admin\models\Concert $model */
+
+use yii\bootstrap5\Html;
 
 $this->title = Yii::t('app', 'CONCERTS_ADMIN_PAGE_UPDATE_CONCERT');
 

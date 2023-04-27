@@ -3,7 +3,6 @@
 /* @var $model app\modules\admin\models\Concert */
 
 use yii\bootstrap5\Html;
-use yii\bootstrap5\Button;
 use yii\bootstrap5\Modal;
 use yii\bootstrap5\ActiveForm;
 ?>

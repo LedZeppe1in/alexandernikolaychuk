@@ -196,7 +196,7 @@ class ProjectController extends Controller
         Yii::$app->getSession()->setFlash('success',
             Yii::t('app', 'PROJECTS_ADMIN_PAGE_MESSAGE_DELETED_PROJECT'));
 
-        return $this->redirect(['index']);
+        return $this->redirect(['list']);
     }
 
     /**

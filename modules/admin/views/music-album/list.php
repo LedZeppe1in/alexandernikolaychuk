@@ -53,7 +53,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'links',
                 'format' => 'raw',
                 'value' => function($data) {
-                    if ($data->name) {
+                    if ($data->links) {
                         $links = explode(',', $data->links);
                         $str = '';
                         foreach($links as $link)

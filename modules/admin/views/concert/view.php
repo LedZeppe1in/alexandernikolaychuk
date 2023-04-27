@@ -50,7 +50,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'links',
                 'value' => function($model) {
-                    if ($model->name) {
+                    if ($model->links) {
                         $links = explode(',', $model->links);
                         $str = '';
                         foreach($links as $link)

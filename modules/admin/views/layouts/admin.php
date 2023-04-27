@@ -33,6 +33,10 @@ AppAsset::register($this);
     <div class="wrap">
         <?php
         NavBar::begin([
+            'brandLabel' => Yii::$app->language == 'ru-RU' ?  Html::img('@web/images/admin-logo-ru.png',
+                ['alt'=>Yii::$app->name, 'class'=>'admin-logo']) : Html::img('@web/images/admin-logo-en.png',
+                ['alt'=>Yii::$app->name, 'class'=>'admin-logo']),
+            'brandUrl' => Yii::$app->homeUrl,
             'options' => [
                 'class' => 'navbar-expand-md navbar-dark bg-dark fixed-top',
             ],

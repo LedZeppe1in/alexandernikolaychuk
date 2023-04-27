@@ -114,7 +114,17 @@ return [
     /* Страницы администрирования видео */
     'VIDEO_ADMIN_PAGE_VIDEO' => 'Video',
     /* Страницы администрирования музыки */
-    'MUSIC_ADMIN_PAGE_MUSIC' => 'Music',
+    'MUSIC_ADMIN_PAGE_MUSIC_ALBUM' => 'Music album',
+    'MUSIC_ADMIN_PAGE_MUSIC_ALBUMS' => 'Music albums',
+    'MUSIC_ADMIN_PAGE_CREATE_MUSIC_ALBUM' => 'Create music album',
+    'MUSIC_ADMIN_PAGE_VIEW_MUSIC_ALBUM' => 'View music album',
+    'MUSIC_ADMIN_PAGE_UPDATE_MUSIC_ALBUM' => 'Update music album',
+    'MUSIC_ADMIN_PAGE_DELETE_MUSIC_ALBUM' => 'Delete music album',
+    'MUSIC_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Are you sure that you want to delete this music album?',
+    /* Сообщения на страницах администрирования музыки */
+    'MUSIC_ADMIN_PAGE_MESSAGE_CREATE_MUSIC_ALBUM' => 'You have successfully created a new music album.',
+    'MUSIC_ADMIN_PAGE_MESSAGE_UPDATED_MUSIC_ALBUM' => 'You have successfully updated music album.',
+    'MUSIC_ADMIN_PAGE_MESSAGE_DELETED_MUSIC_ALBUM' => 'You have successfully deleted music album.',
     /* Страницы администрирования проектов */
     'PROJECTS_ADMIN_PAGE_PROJECTS' => 'Projects',
     /* Страницы администрирования репертуара */

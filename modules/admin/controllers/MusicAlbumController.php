@@ -161,7 +161,7 @@ class MusicAlbumController extends Controller
                 }
             }
             Yii::$app->getSession()->setFlash('success',
-                Yii::t('app', 'MUSIC_ADMIN_PAGE_UPDATE_MUSIC_ALBUM'));
+                Yii::t('app', 'MUSIC_ADMIN_PAGE_MESSAGE_UPDATED_MUSIC_ALBUM'));
 
             return $this->redirect(['view', 'id' => $model->id]);
         }
@@ -194,7 +194,7 @@ class MusicAlbumController extends Controller
         }
         $model->delete(); // Удалние записи из БД
         Yii::$app->getSession()->setFlash('success',
-            Yii::t('app', 'MUSIC_ADMIN_PAGE_DELETE_MUSIC_ALBUM'));
+            Yii::t('app', 'MUSIC_ADMIN_PAGE_MESSAGE_DELETED_MUSIC_ALBUM'));
 
         return $this->redirect(['list']);
     }

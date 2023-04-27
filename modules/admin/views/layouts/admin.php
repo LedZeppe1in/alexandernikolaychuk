@@ -62,7 +62,7 @@ AppAsset::register($this);
                     ]
                 ],
                 ['label' => Yii::t('app', 'NAV_ADMIN_CONCERTS'), 'url' => ['/admin/concert/list']],
-                ['label' => Yii::t('app', 'NAV_ADMIN_MUSIC'), 'url' => ['/admin/music/list']],
+                ['label' => Yii::t('app', 'NAV_ADMIN_MUSIC'), 'url' => ['/admin/music-album/list']],
                 ['label' => Yii::t('app', 'NAV_ADMIN_PROJECTS'), 'url' => ['/admin/project/list']],
                 ['label' => Yii::t('app', 'NAV_ADMIN_REPERTOIRE'), 'url' => ['/admin/repertoire/list']]
             ],

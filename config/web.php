@@ -59,6 +59,8 @@ $config = [
                 '/user/<_u:(profile|biography|update-profile|update-biography|update-password)>' => 'admin/user/<_u>',
                 '/concert/<_cn:(list|create)>' => 'admin/concert/<_cn>',
                 '/concert/<_cn:(view|update|delete)>/<id:\d+>' => 'admin/concert/<_cn>',
+                '/music-album/<_ma:(list|create)>' => 'admin/music-album/<_ma>',
+                '/music-album/<_ma:(view|update|delete)>/<id:\d+>' => 'admin/music-album/<_ma>',
                 '/repertoire/<_rp:(list|create)>' => 'admin/repertoire/<_rp>',
                 '/repertoire/<_rp:(view|update|delete)>/<id:\d+>' => 'admin/repertoire/<_rp>',
             ],

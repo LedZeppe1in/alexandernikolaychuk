@@ -110,7 +110,17 @@ return [
     'CONCERTS_ADMIN_PAGE_MESSAGE_UPDATED_CONCERT' => 'Вы успешно обновили данный концерт.',
     'CONCERTS_ADMIN_PAGE_MESSAGE_DELETED_CONCERT' => 'Вы успешно удалили концерт.',
     /* Страницы администрирования фото */
-    'PHOTO_ADMIN_PAGE_PHOTO' => 'Фото',
+    'PHOTO_ADMIN_PAGE_PHOTO' => 'Фотография',
+    'PHOTO_ADMIN_PAGE_PHOTOS' => 'Фотографии',
+    'PHOTO_ADMIN_PAGE_CREATE_PHOTO' => 'Создать фотографию',
+    'PHOTO_ADMIN_PAGE_VIEW_PHOTO' => 'Просмотр фотографии',
+    'PHOTO_ADMIN_PAGE_UPDATE_PHOTO' => 'Изменить фотографию',
+    'PHOTO_ADMIN_PAGE_DELETE_PHOTO' => 'Удалить фотографию',
+    'PHOTO_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Вы уверены, что хотите удалить данную фотографию?',
+    /* Сообщения на страницах администрирования фото */
+    'PHOTO_ADMIN_PAGE_MESSAGE_CREATE_PHOTO' => 'Вы успешно создали новую фотографию.',
+    'PHOTO_ADMIN_PAGE_MESSAGE_UPDATED_PHOTO' => 'Вы успешно обновили данную фотографию.',
+    'PHOTO_ADMIN_PAGE_MESSAGE_DELETED_PHOTO' => 'Вы успешно удалили фотографию.',
     /* Страницы администрирования видео */
     'VIDEO_ADMIN_PAGE_VIDEO' => 'Видео',
     /* Страницы администрирования музыки */

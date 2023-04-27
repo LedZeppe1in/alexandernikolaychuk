@@ -111,6 +111,16 @@ return [
     'CONCERTS_ADMIN_PAGE_MESSAGE_DELETED_CONCERT' => 'You have successfully deleted concert.',
     /* Страницы администрирования фото */
     'PHOTO_ADMIN_PAGE_PHOTO' => 'Photo',
+    'PHOTO_ADMIN_PAGE_PHOTOS' => 'Photos',
+    'PHOTO_ADMIN_PAGE_CREATE_PHOTO' => 'Create photo',
+    'PHOTO_ADMIN_PAGE_VIEW_PHOTO' => 'View photo',
+    'PHOTO_ADMIN_PAGE_UPDATE_PHOTO' => 'Update photo',
+    'PHOTO_ADMIN_PAGE_DELETE_PHOTO' => 'Delete photo',
+    'PHOTO_ADMIN_PAGE_MODAL_FORM_TEXT' => 'Are you sure that you want to delete this photo?',
+    /* Сообщения на страницах администрирования фото */
+    'PHOTO_ADMIN_PAGE_MESSAGE_CREATE_PHOTO' => 'You have successfully created a new photo.',
+    'PHOTO_ADMIN_PAGE_MESSAGE_UPDATED_PHOTO' => 'You have successfully updated photo.',
+    'PHOTO_ADMIN_PAGE_MESSAGE_DELETED_PHOTO' => 'You have successfully deleted photo.',
     /* Страницы администрирования видео */
     'VIDEO_ADMIN_PAGE_VIDEO' => 'Video',
     /* Страницы администрирования музыки */

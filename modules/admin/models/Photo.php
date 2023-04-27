@@ -38,10 +38,9 @@ class Photo extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['file', 'type'], 'required'],
+            [['type'], 'required'],
             [['file'], 'string'],
-            ['photo_file', 'file', 'skipOnEmpty' => !$this->isNewRecord, 'checkExtensionByMimeType' => false,
-                'extensions' => ['jpg', 'jpeg', 'png']],
+            ['photo_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
 

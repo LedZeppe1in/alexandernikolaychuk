@@ -46,15 +46,15 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => 'type',
                 'format' => 'raw',
-                'value' => function($data) {
-                    return $data->getTypeName();
+                'value' => function($model) {
+                    return $model->getTypeName();
                 }
             ],
             [
                 'attribute' => 'composition_list',
                 'format' => 'raw',
-                'value' => function($data) {
-                    return $data->composition_list;
+                'value' => function($model) {
+                    return $model->composition_list;
                 }
             ]
         ]

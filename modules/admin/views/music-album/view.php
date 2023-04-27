@@ -45,10 +45,10 @@ $this->params['breadcrumbs'][] = $this->title;
             'name',
             [
                 'attribute' => 'type',
+                'value' => function($model) {
+                    return $model->getTypeName();
+                },
                 'format' => 'raw',
-                'value' => function($data) {
-                    return $data->getTypeName();
-                }
             ],
             [
                 'attribute' => 'links',

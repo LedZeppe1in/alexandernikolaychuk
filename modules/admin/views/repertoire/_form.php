@@ -24,7 +24,7 @@ use app\modules\admin\models\Repertoire;
     <?= $form->field($model, 'type')->dropDownList(Repertoire::getTypesArray()) ?>
 
     <?= $form->field($model, 'composition_list')->widget(CKEditor::className(), [
-        'options' => ['rows' => 10],
+        'options' => ['rows' => 6],
         'preset' => 'full'
     ]) ?>
 

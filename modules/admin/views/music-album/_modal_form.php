@@ -1,6 +1,6 @@
 <?php
 
-/* @var $model app\modules\admin\models\Concert */
+/* @var $model app\modules\admin\models\MusicAlbum */
 
 use yii\bootstrap5\Html;
 use yii\bootstrap5\Modal;

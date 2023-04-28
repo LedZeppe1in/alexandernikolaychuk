@@ -12,7 +12,7 @@ use app\modules\client\models\LoginForm;
 
 class DefaultController extends Controller
 {
-    public $layout = 'client';
+    public $layout = 'client'; // Подключение макета клиентской части сайта
 
     /**
      * {@inheritdoc}
@@ -65,11 +65,8 @@ class DefaultController extends Controller
      */
     public function actionIndex()
     {
-        $user = User::find()->one();
-
-        return $this->render('index', [
-            'user' => $user
-        ]);
+        $this->layout = 'home'; // Подключение макета главной страницы
+        return $this->render('index', ['user' => User::find()->one()]);
     }
 
     /**
@@ -79,7 +76,7 @@ class DefaultController extends Controller
      */
     public function actionBiography()
     {
-        return $this->render('biography');
+        return $this->render('biography', ['user' => User::find()->one()]);
     }
 
     /**

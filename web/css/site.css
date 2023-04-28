@@ -112,3 +112,27 @@ a.desc:after {
 .footer-icon {
     padding-right: 10px;
 }
+
+/* Logo */
+.client-logo {
+    float: left;
+    max-height: 30%;
+    max-width: 30%;
+    margin-top: -10%;
+}
+
+/* Font for site */
+@font-face {
+    font-family: KarlBrendler;
+    src: url('../fonts/Karl Brendler.eot'); /* IE9 Compat Modes */
+    src: url('../fonts/Karl Brendler.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        /*url('../fonts/Karl Brendler.woff') format('woff'), !* Modern Browsers *!*/
+    url('../fonts/Karl Brendler.ttf')  format('truetype'), /* Safari, Android, iOS */
+    url('../fonts/Karl Brendler.svg#svgFontName') format('svg'); /* Legacy iOS */
+    font-weight: normal;
+    font-style: normal;
+}
+
+.sidebar-nav {
+    font-family: KarlBrendler, serif;
+}

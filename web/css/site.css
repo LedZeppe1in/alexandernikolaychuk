@@ -129,3 +129,13 @@ a.desc:after {
 h1 {
     font-family: KarlBrendler, serif !important;
 }
+
+/* Error page styles */
+.error-wrap {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.error-title {
+    font-family: KarlBrendler, serif;
+}

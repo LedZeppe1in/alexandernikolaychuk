@@ -132,12 +132,12 @@ h1 {
 
 /* Error and sing-in page styles */
 .error-wrap {
-    margin-top: 50px;
+    padding-top: 50px;
     text-align: center;
 }
 
 .sing-in-wrap {
-    margin-top: 50px;
+    padding-top: 50px;
 }
 
 .error-title, .sing-in-title {

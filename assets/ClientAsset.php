@@ -21,7 +21,7 @@ class ClientAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/app.css',
-        'css/site.css',
+        'css/site.css'
     ];
     public $js = [
         'js/app.js',

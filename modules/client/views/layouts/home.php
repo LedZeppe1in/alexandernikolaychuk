@@ -45,45 +45,45 @@ ClientAsset::register($this);
                     <a href="<?= Url::to(['default/index']) ?>"><?= Yii::t('app', 'NAV_HOME') ?></a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/biography']) ?>">
+                    <a href="<?= Url::to(['biography']) ?>">
                         <?= Yii::t('app', 'NAV_BIOGRAPHY') ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/concerts']) ?>">
+                    <a href="<?= Url::to(['concerts']) ?>">
                         <?= Yii::t('app', 'NAV_CONCERTS') ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/media']) ?>">
+                    <a href="<?= Url::to(['media']) ?>">
                         <?= Yii::t('app', 'NAV_MEDIA') ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/music']) ?>">
+                    <a href="<?= Url::to(['music']) ?>">
                         <?= Yii::t('app', 'NAV_MUSIC') ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/projects']) ?>">
+                    <a href="<?= Url::to(['projects']) ?>">
                         <?= Yii::t('app', 'NAV_PROJECTS') ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/repertoire']) ?>">
+                    <a href="<?= Url::to(['repertoire']) ?>">
                         <?= Yii::t('app', 'NAV_REPERTOIRE') ?>
                     </a>
                 </li>
                 <li>
-                    <a href="<?= Url::to(['default/contacts']) ?>">
+                    <a href="<?= Url::to(['contacts']) ?>">
                         <?= Yii::t('app', 'NAV_CONTACTS') ?>
                     </a>
                 </li>
                 <?php if (Yii::$app->user->isGuest)
-                    echo '<li>' . Html::a(Yii::t('app', 'NAV_SIGN_IN'), ['default/sing-in']) . '</li>';
+                    echo '<li>' . Html::a(Yii::t('app', 'NAV_SIGN_IN'), ['sing-in']) . '</li>';
                 else
                     echo '<li>' . Html::a(Yii::t('app', 'NAV_ADMINISTRATION'), ['/admin/user/profile']) .
-                        '</li><li>' . Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['default/sing-out']) .
+                        '</li><li>' . Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['sing-out']) .
                         '</li>';
                 ?>
                 <li>

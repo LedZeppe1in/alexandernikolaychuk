@@ -9,6 +9,7 @@ use yii\filters\VerbFilter;
 use yii\filters\AccessControl;
 use app\modules\admin\models\User;
 use app\modules\client\models\LoginForm;
+use app\modules\client\models\ContactForm;
 
 class DefaultController extends Controller
 {
@@ -136,7 +137,19 @@ class DefaultController extends Controller
      */
     public function actionContacts()
     {
-        return $this->render('contacts');
+        $user = User::find()->one();
+
+        $model = new ContactForm();
+        if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
+            Yii::$app->session->setFlash('contactFormSubmitted');
+
+            return $this->refresh();
+        }
+
+        return $this->render('contacts', [
+            'model' => $model,
+            'user' => $user,
+        ]);
     }
 
     /**

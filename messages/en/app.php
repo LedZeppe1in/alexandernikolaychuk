@@ -42,6 +42,7 @@ return [
     'BUTTON_UPDATE' => 'Update',
     'BUTTON_DELETE' => 'Delete',
     'BUTTON_CANCEL' => 'Cancel',
+    'BUTTON_SEND' => 'Send',
 
     /* Общие сообщения */
     'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'No results found.',
@@ -55,9 +56,6 @@ return [
     'ERROR_PAGE_TEXT' => 'Please contact us if you think this is a server error. Thank you.',
 
     /* Страницы клиентской части сайта */
-    /* Главная страница */
-    'HOME_PAGE_TITLE' => 'Alexander Nikolaychuk',
-    'HOME_PAGE_TEXT' => 'official website',
     /* Страница биографии */
     'BIOGRAPHY_PAGE_TITLE' => 'Biography',
     /* Страница концертов */
@@ -73,6 +71,7 @@ return [
 
     /* Страница контактов */
     'CONTACTS_PAGE_TITLE' => 'Contacts',
+    'CONTACTS_PAGE_NAME' => 'Alexander Nikolaychuk',
     'CONTACTS_PAGE_TOUCH_WITH_ME' => 'Get in touch with me',
     'CONTACTS_PAGE_NOTICE' => 'If you have business inquiries or other questions, please fill out the following form to contact me. Thank you!',
     'CONTACTS_PAGE_SUCCESS_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',

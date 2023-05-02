@@ -60,6 +60,7 @@ return [
     'BIOGRAPHY_PAGE_TITLE' => 'Biography',
     /* Страница концертов */
     'CONCERTS_PAGE_TITLE' => 'Concerts',
+    'CONCERTS_PAGE_UPCOMING_CONCERTS' => 'UPCOMING CONCERTS',
     /* Страница медиа */
     'MEDIA_PAGE_TITLE' => 'Media',
     /* Страница музыки */
@@ -72,6 +73,8 @@ return [
     /* Страница контактов */
     'CONTACTS_PAGE_TITLE' => 'Contacts',
     'CONTACTS_PAGE_NAME' => 'Alexander Nikolaychuk',
+    'CONTACTS_PAGE_PHONE' => 'Phone',
+    'CONTACTS_PAGE_SOCIALS' => 'Social network',
     'CONTACTS_PAGE_TOUCH_WITH_ME' => 'Get in touch with me',
     'CONTACTS_PAGE_NOTICE' => 'If you have business inquiries or other questions, please fill out the following form to contact me. Thank you!',
     'CONTACTS_PAGE_SUCCESS_MESSAGE' => 'Thank you for contacting us. We will respond to you as soon as possible.',

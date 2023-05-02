@@ -60,7 +60,6 @@ return [
     'BIOGRAPHY_PAGE_TITLE' => 'Биография',
     /* Страница концертов */
     'CONCERTS_PAGE_TITLE' => 'Концерты',
-    'CONCERTS_PAGE_UPCOMING_CONCERTS' => 'ПРЕДСТОЯЩИЕ КОНЦЕРТЫ',
     /* Страница медиа */
     'MEDIA_PAGE_TITLE' => 'Медиа',
     /* Страница музыки */

@@ -3,6 +3,11 @@
 namespace app\modules\client\controllers;
 
 use app\modules\admin\models\Concert;
+use app\modules\admin\models\MusicAlbum;
+use app\modules\admin\models\Photo;
+use app\modules\admin\models\Project;
+use app\modules\admin\models\Repertoire;
+use app\modules\admin\models\Video;
 use Yii;
 use yii\web\Response;
 use yii\web\Controller;
@@ -104,7 +109,15 @@ class DefaultController extends Controller
      */
     public function actionMedia()
     {
-        return $this->render('media');
+        $photo_model = Photo::find()->all();
+        $video_model = Video::find()->all();
+        $user = User::find()->one();
+
+        return $this->render('media', [
+            'photo_model' => $photo_model,
+            'video_model' => $video_model,
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -114,7 +127,13 @@ class DefaultController extends Controller
      */
     public function actionMusic()
     {
-        return $this->render('music');
+        $model = MusicAlbum::find()->all();
+        $user = User::find()->one();
+
+        return $this->render('music', [
+            'model' => $model,
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -124,7 +143,13 @@ class DefaultController extends Controller
      */
     public function actionProjects()
     {
-        return $this->render('projects');
+        $model = Project::find()->all();
+        $user = User::find()->one();
+
+        return $this->render('projects', [
+            'model' => $model,
+            'user' => $user,
+        ]);
     }
 
     /**
@@ -134,7 +159,13 @@ class DefaultController extends Controller
      */
     public function actionRepertoire()
     {
-        return $this->render('repertoire');
+        $model = Repertoire::find()->all();
+        $user = User::find()->one();
+
+        return $this->render('repertoire', [
+            'model' => $model,
+            'user' => $user,
+        ]);
     }
 
     /**

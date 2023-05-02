@@ -62,6 +62,8 @@ return [
     'CONCERTS_PAGE_TITLE' => 'Concerts',
     /* Страница медиа */
     'MEDIA_PAGE_TITLE' => 'Media',
+    'MEDIA_PAGE_PHOTO' => 'Photo',
+    'MEDIA_PAGE_VIDEO' => 'Video',
     /* Страница музыки */
     'MUSIC_PAGE_TITLE' => 'Music',
     /* Страница проектов */

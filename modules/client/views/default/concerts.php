@@ -19,7 +19,7 @@ $this->title = Yii::t('app', 'CONCERTS_PAGE_TITLE');
         <li class="sidebar-brand">
             <a href="<?= Url::to(['index']) ?>"><?= Yii::t('app', 'NAV_HOME') ?></a>
         </li>
-        <li class="">
+        <li class>
             <a href="<?= Url::to(['biography']) ?>">
                 <?= Yii::t('app', 'NAV_BIOGRAPHY') ?>
             </a>

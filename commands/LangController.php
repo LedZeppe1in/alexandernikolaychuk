@@ -4,7 +4,7 @@ namespace app\commands;
 
 use yii\helpers\Console;
 use yii\console\Controller;
-use app\modules\main\models\Lang;
+use app\modules\admin\models\Lang;
 
 /**
  * LangController реализует консольные команды для работы с языками.

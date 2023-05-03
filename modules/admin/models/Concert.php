@@ -56,8 +56,8 @@ class Concert extends \yii\db\ActiveRecord
         return [
             [['poster', 'links'], 'string'],
             [['name'], 'string', 'max' => 255],
-            ['name', 'either', 'skipOnEmpty'=>false, 'params' => ['other' => 'poster_file']],
-            ['poster_file', 'either', 'skipOnEmpty'=>false, 'params' => ['other' => 'name']],
+            ['name', 'either', 'skipOnEmpty'=>!$this->isNewRecord, 'params' => ['other' => 'poster_file']],
+            ['poster_file', 'either', 'skipOnEmpty'=>!$this->isNewRecord, 'params' => ['other' => 'name']],
             ['poster_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }

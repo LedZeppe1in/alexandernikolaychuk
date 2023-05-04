@@ -1,7 +1,8 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model app\modules\admin\models\Repertoire */
+/* @var $concert_repertoire app\modules\admin\models\Repertoire */
+/* @var $orchestra_repertoire app\modules\admin\models\Repertoire */
 /* @var $user app\modules\admin\models\User */
 
 use yii\bootstrap5\Html;
@@ -88,7 +89,43 @@ $this->title = Yii::t('app', 'REPERTOIRE_PAGE_TITLE');
 
 <div class="container repertoires content-box" id="body">
     <div class="row repertory-board">
-        <p>Страница в разработке.</p>
+        <?php if (!empty($concert_repertoire)): ?>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center repertoire-item">
+                <h3 class="repertoire-title text-center"><?php echo $concert_repertoire->getTypeName() ?></h3>
+                <hr>
+                <div class="repertoire">
+                    <div class="section">
+                        <div class="section-composition">
+                            <h3 class="section-title"><?= $concert_repertoire->name ?></h3>
+                        </div>
+                        <div class="section-composition">
+                            <?= $concert_repertoire->composition_list ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if (!empty($orchestra_repertoire)): ?>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center repertoire-item">
+                <h3 class="repertoire-title text-center"><?= $orchestra_repertoire->getTypeName() ?></h3>
+                <hr>
+                <div class="repertoire">
+                    <div class="section">
+                        <div class="section-composition">
+                            <h3 class="section-title"><?= $orchestra_repertoire->name ?></h3>
+                        </div>
+                        <div class="section-composition">
+                            <?= $orchestra_repertoire->composition_list ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endif; ?>
+        <?php if (empty($concert_repertoire) and empty($orchestra_repertoire)): ?>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center repertoire-item">
+                <h3 class="repertoire-title text-center"><?= Yii::t('app', 'GENERAL_NOTICE_NO_RESULTS_FOUND') ?></h3>
+            </div>
+        <?php endif; ?>
     </div>
 
     <footer class="footer" style="position: bottom:">

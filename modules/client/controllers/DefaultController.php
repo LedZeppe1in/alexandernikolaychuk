@@ -151,7 +151,11 @@ class DefaultController extends Controller
      */
     public function actionRepertoire()
     {
-        return $this->render('repertoire', ['model' => Repertoire::find()->all(), 'user' => User::find()->one()]);
+        return $this->render('repertoire', [
+            'concert_repertoire' => Repertoire::find()->where(['type' => Repertoire::CONCERT_TYPE])->all()[0],
+            'orchestra_repertoire' => Repertoire::find()->where(['type' => Repertoire::ORCHESTRA_TYPE])->all()[0],
+            'user' => User::find()->one()
+        ]);
     }
 
     /**

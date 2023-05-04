@@ -79,9 +79,9 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
 <div class="container">
     <div class="row">
         <div class="text-center">
-            <h1 class="section-header modal-title"><?= $model->name ?></h1>
+            <h1 class="section-header"><?= $model->name ?></h1>
         </div>
-    </div>
+    </div><br />
     <div class="row">
         <?php if ($model->cover !== null): ?>
             <div class="col-sm-6">

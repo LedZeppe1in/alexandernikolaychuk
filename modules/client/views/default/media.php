@@ -1,8 +1,6 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $photo_model app\modules\admin\models\Photo */
-/* @var $video_model app\modules\admin\models\Video */
 /* @var $user app\modules\admin\models\User */
 
 use yii\bootstrap5\Html;
@@ -89,7 +87,34 @@ $this->title = Yii::t('app', 'MEDIA_PAGE_TITLE');
 
 <div class="container albums-container content-box" id="body">
     <div class="row">
-        <p>Страница в разработке.</p>
+        <div class="album">
+            <div class="album-content">
+                <h3 class="title"><?= Yii::t('app', 'MEDIA_PAGE_PHOTO') ?></h3>
+                <a class="album-link album-cover" href="<?= Url::to(['photo']) ?>">
+                    <div class="album-hover">
+                        <div class="album-hover-content">
+                            <i class="fa fa-clone fa-3x"></i>
+                        </div>
+                    </div>
+                    <?= Html::img('@web/images/photo.jpg', ['class' => 'img-responsive center-block photo-block']); ?>
+                </a>
+                <div class="row"></div>
+            </div>
+        </div>
+        <div class="album">
+            <div class="album-content">
+                <h3 class="title"><?= Yii::t('app', 'MEDIA_PAGE_VIDEO') ?></h3>
+                <a class="album-link album-cover" href="<?= Url::to(['video']) ?>">
+                    <div class="album-hover">
+                        <div class="album-hover-content">
+                            <i class="fa fa-clone fa-3x"></i>
+                        </div>
+                    </div>
+                    <?= Html::img('@web/images/video.jpg', ['class' => 'img-responsive center-block video-block']); ?>
+                </a>
+                <div class="row"></div>
+            </div>
+        </div>
     </div>
 
     <footer class="footer" style="position: bottom:">

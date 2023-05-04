@@ -130,6 +130,22 @@ h1, h3 {
     font-family: KarlBrendler, serif !important;
 }
 
+.photo-block, .video-block {
+    max-width: 450px;
+}
+
+.tile-photo {
+    object-fit: cover;
+    height: 40vh;
+    width: 100%;
+}
+
+.thumb {
+    margin-top: 20px !important;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 /* Error and sing-in page styles */
 .error-wrap {
     padding-top: 50px;

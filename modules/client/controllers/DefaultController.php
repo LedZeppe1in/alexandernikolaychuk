@@ -103,11 +103,30 @@ class DefaultController extends Controller
      */
     public function actionMedia()
     {
-        return $this->render('media', [
-            'photo_model' => Photo::find()->where(['type' => Photo::AUTHOR_TYPE])->all(),
-            'video_model' => Video::find()->all(),
+        return $this->render('media', ['user' => User::find()->one()]);
+    }
+
+    /**
+     * Photo page.
+     *
+     * @return string
+     */
+    public function actionPhoto()
+    {
+        return $this->render('photo', [
+            'model' => Photo::find()->where(['type' => Photo::AUTHOR_TYPE])->all(),
             'user' => User::find()->one(),
         ]);
+    }
+
+    /**
+     * Video page.
+     *
+     * @return string
+     */
+    public function actionVideo()
+    {
+        return $this->render('video', ['model' => Video::find()->all(), 'user' => User::find()->one()]);
     }
 
     /**

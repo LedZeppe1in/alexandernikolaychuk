@@ -126,7 +126,7 @@ a.desc:after {
     font-family: KarlBrendler, serif;
 }
 
-h1 {
+h1, h3 {
     font-family: KarlBrendler, serif !important;
 }
 

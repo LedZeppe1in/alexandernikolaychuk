@@ -1,15 +1,13 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $name string */
-/* @var $message string */
-/* @var $exception Exception */
+/* @var $model app\modules\admin\models\MusicAlbum */
+/* @var $user app\modules\admin\models\User */
 
 use yii\bootstrap5\Html;
 use yii\helpers\Url;
-use app\modules\admin\models\User;
 
-$this->title = $name;
+$this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
 ?>
 
 <a id="menu-toggle" href="#" class="btn btn-dark btn-lg toggle">
@@ -76,33 +74,44 @@ $this->title = $name;
         </li>
     </ul>
 </nav>
-<div class="home-header"></div>
+<div class="home-header"></div><br /><br />
 
-<div class="error-wrap">
-    <!-- Breadcrumbs Section -->
-    <section class="breadcrumbs-custom bg-image context-dark">
-        <div class="container">
-            <h1 class="breadcrumbs-custom-title error-title"><?= $this->title ?></h1>
+<div class="container">
+    <div class="row">
+        <div class="text-center">
+            <h1 class="section-header modal-title"><?= $model->name ?></h1>
         </div>
-    </section>
-
-    <!-- Blurb minimal -->
-    <section class="section section-md bg-default">
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col-md-12 col-xl-6 well">
-                    <div class="big-title-wrap">
-                        <h5 class="big-title-text"><?= nl2br(Html::encode($message)) ?></h5>
-                    </div>
-                    <div class="big-title-wrap">
-                        <p class="big"><?= Yii::t('app', 'ERROR_PAGE_NOTICE') ?></p>
-                        <p class="big"><?= Yii::t('app', 'ERROR_PAGE_TEXT') ?></p>
-                    </div>
-                </div>
+    </div>
+    <div class="row">
+        <?php if ($model->cover !== null): ?>
+            <div class="col-sm-6">
+                <?= Html::img('@web/uploads/album-cover/' . $model->id . '/' . basename($model->cover),
+                    ['class' => 'img-responsive center-block']); ?>
+            </div>
+        <?php endif; ?>
+        <div class="col-sm-6">
+            <h3><?= Yii::t('app', 'MUSIC_ALBUM_MODEL_LINKS') ?></h3>
+            <div class="description">
+                <?php if ($model->links) {
+                    $links = explode(',', $model->links);
+                    $str = '';
+                    foreach ($links as $link)
+                        $str .= Html::a($link, $link) . '<br />';
+                    echo $str;
+                } else echo Yii::t('app', 'GENERAL_NOTICE_NO_RESULTS_FOUND') ?>
+            </div>
+            <h3><?= Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION') ?></h3>
+            <div class="description">
+                <?php
+                    if ($model->description)
+                        echo $model->description;
+                    else
+                        echo Yii::t('app', 'GENERAL_NOTICE_NO_RESULTS_FOUND');
+                ?>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+</div><br /><br /><br />
 
 <footer id="footer" class="footer-home">
     <div class="container footer-container">
@@ -110,20 +119,20 @@ $this->title = $name;
             <div class="col-sm-4 text-left">&copy; <?= date('Y') . ' ' .
                 Yii::t('app', 'FOOTER_LOGO') ?></div>
             <div class="col-sm-4 text-center">
-                <?php if (User::find()->one()->youtube_link): ?>
-                    <a href="<?= User::find()->one()->youtube_link ?>"><p class="fa-brands fa-youtube fa-lg footer-icon"></p></a>
+                <?php if ($user->youtube_link): ?>
+                    <a href="<?= $user->youtube_link ?>"><p class="fa-brands fa-youtube fa-lg footer-icon"></p></a>
                 <?php endif; ?>
-                <?php if (User::find()->one()->instagram_link): ?>
-                    <a href="<?= User::find()->one()->instagram_link ?>"><p class="fa-brands fa-instagram fa-lg footer-icon"></p></a>
+                <?php if ($user->instagram_link): ?>
+                    <a href="<?= $user->instagram_link ?>"><p class="fa-brands fa-instagram fa-lg footer-icon"></p></a>
                 <?php endif; ?>
-                <?php if (User::find()->one()->facebook_link): ?>
-                    <a href="<?= User::find()->one()->facebook_link ?>"><p class="fa-brands fa-facebook fa-lg footer-icon"></p></a>
+                <?php if ($user->facebook_link): ?>
+                    <a href="<?= $user->facebook_link ?>"><p class="fa-brands fa-facebook fa-lg footer-icon"></p></a>
                 <?php endif; ?>
-                <?php if (User::find()->one()->twitter_link): ?>
-                    <a href="<?= User::find()->one()->twitter_link ?>"><p class="fa-brands fa-twitter fa-lg footer-icon"></p></a>
+                <?php if ($user->twitter_link): ?>
+                    <a href="<?= $user->twitter_link ?>"><p class="fa-brands fa-twitter fa-lg footer-icon"></p></a>
                 <?php endif; ?>
-                <?php if (User::find()->one()->vk_link): ?>
-                    <a href="<?= User::find()->one()->vk_link ?>"><p class="fa-brands fa-vk fa-lg footer-icon"></p></a>
+                <?php if ($user->vk_link): ?>
+                    <a href="<?= $user->vk_link ?>"><p class="fa-brands fa-vk fa-lg footer-icon"></p></a>
                 <?php endif; ?>
             </div>
             <div class="col-sm-4 text-right"><?= Yii::t('app', 'FOOTER_POWERED_BY') .

@@ -43,6 +43,7 @@ return [
     'BUTTON_DELETE' => 'Удалить',
     'BUTTON_CANCEL' => 'Отмена',
     'BUTTON_SEND' => 'Отправить',
+    'BUTTON_LEARN_MORE' => 'ПОДРОБНЕЕ',
 
     /* Общие сообщения */
     'GENERAL_NOTICE_NO_RESULTS_FOUND' => 'Ничего не найдено.',

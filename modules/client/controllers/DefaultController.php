@@ -93,13 +93,7 @@ class DefaultController extends Controller
      */
     public function actionConcerts()
     {
-        $model = Concert::find()->all();
-        $user = User::find()->one();
-
-        return $this->render('concerts', [
-            'model' => $model,
-            'user' => $user,
-        ]);
+        return $this->render('concerts', ['model' => Concert::find()->all(), 'user' => User::find()->one()]);
     }
 
     /**
@@ -109,14 +103,10 @@ class DefaultController extends Controller
      */
     public function actionMedia()
     {
-        $photo_model = Photo::find()->all();
-        $video_model = Video::find()->all();
-        $user = User::find()->one();
-
         return $this->render('media', [
-            'photo_model' => $photo_model,
-            'video_model' => $video_model,
-            'user' => $user,
+            'photo_model' => Photo::find()->where(['type' => Photo::AUTHOR_TYPE])->all(),
+            'video_model' => Video::find()->all(),
+            'user' => User::find()->one(),
         ]);
     }
 
@@ -127,13 +117,21 @@ class DefaultController extends Controller
      */
     public function actionMusic()
     {
-        $model = MusicAlbum::find()->all();
-        $user = User::find()->one();
-
         return $this->render('music', [
-            'model' => $model,
-            'user' => $user,
+            'model' => MusicAlbum::find()->where(['type' => MusicAlbum::AUTHOR_TYPE])->all(),
+            'user' => User::find()->one()
         ]);
+    }
+
+    /**
+     * Displays a single MusicAlbum model.
+     *
+     * @param $id
+     * @return string
+     */
+    public function actionMusicView($id)
+    {
+        return $this->render('music-view', ['model' => MusicAlbum::findOne($id), 'user' => User::find()->one()]);
     }
 
     /**
@@ -143,13 +141,7 @@ class DefaultController extends Controller
      */
     public function actionProjects()
     {
-        $model = Project::find()->all();
-        $user = User::find()->one();
-
-        return $this->render('projects', [
-            'model' => $model,
-            'user' => $user,
-        ]);
+        return $this->render('projects', ['model' => Project::find()->all(), 'user' => User::find()->one()]);
     }
 
     /**
@@ -159,13 +151,7 @@ class DefaultController extends Controller
      */
     public function actionRepertoire()
     {
-        $model = Repertoire::find()->all();
-        $user = User::find()->one();
-
-        return $this->render('repertoire', [
-            'model' => $model,
-            'user' => $user,
-        ]);
+        return $this->render('repertoire', ['model' => Repertoire::find()->all(), 'user' => User::find()->one()]);
     }
 
     /**
@@ -175,8 +161,6 @@ class DefaultController extends Controller
      */
     public function actionContacts()
     {
-        $user = User::find()->one();
-
         $model = new ContactForm();
         if ($model->load(Yii::$app->request->post()) && $model->contact(Yii::$app->params['adminEmail'])) {
             Yii::$app->session->setFlash('contactFormSubmitted');
@@ -186,7 +170,7 @@ class DefaultController extends Controller
 
         return $this->render('contacts', [
             'model' => $model,
-            'user' => $user,
+            'user' => User::find()->one(),
         ]);
     }
 

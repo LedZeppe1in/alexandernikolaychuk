@@ -88,7 +88,38 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
 
 <div class="container discography content-box" id="body">
     <div class="row">
-        <p>Страница в разработке.</p>
+        <?php foreach ($model as $item): ?>
+            <div class="col-sm-10 col-sm-offset-1 disc">
+                <div class="row">
+                    <?php if ($item->cover !== null): ?>
+                        <div class="col-md-6">
+                        <?= Html::img('@web/uploads/album-cover/' . $item->id . '/' . basename($item->cover),
+                            ['class' => 'img-responsive center-block cover']); ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-md-6 text-center">
+                        <h3 class="title"><?= $item->name ?></h3>
+                        <hr>
+                        <?php if ($item->links): ?>
+                            <div class="description">
+                                <?php
+                                    $links = explode(',', $item->links);
+                                    $str = '';
+                                    foreach($links as $link)
+                                        $str .= Html::a($link, $link) . '<br />';
+                                    echo $str;
+                                ?>
+                            </div>
+                        <?php endif; ?>
+                        <p></p>
+                        <?= Html::a(Yii::t('app', 'BUTTON_LEARN_MORE'),
+                            ['music-view', 'id' => $item->id],
+                            ['class' => 'btn btn-default btn-primary square-button']) ?>
+                    </div>
+                </div>
+                <div class="text-center"></div>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <footer class="footer" style="position: bottom:">

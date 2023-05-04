@@ -40,7 +40,8 @@ class Photo extends \yii\db\ActiveRecord
         return [
             [['type'], 'required'],
             [['file'], 'string'],
-            ['photo_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
+            ['photo_file', 'file', 'skipOnEmpty'=>!$this->isNewRecord, 'checkExtensionByMimeType' => false,
+                'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
 

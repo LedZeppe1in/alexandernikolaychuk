@@ -91,33 +91,37 @@ $this->title = Yii::t('app', 'REPERTOIRE_PAGE_TITLE');
     <div class="row repertory-board">
         <?php if (!empty($concert_repertoire)): ?>
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center repertoire-item">
-                <h3 class="repertoire-title text-center"><?php echo $concert_repertoire->getTypeName() ?></h3>
+                <h3 class="repertoire-title text-center"><?php echo $concert_repertoire[0]->getTypeName() ?></h3>
                 <hr>
                 <div class="repertoire">
-                    <div class="section">
-                        <div class="section-composition">
-                            <h3 class="section-title"><?= $concert_repertoire->name ?></h3>
+                    <?php foreach ($concert_repertoire as $item): ?>
+                        <div class="section">
+                            <div class="section-composition">
+                                <h3 class="section-title"><?= $item->name ?></h3>
+                            </div>
+                            <div class="section-composition">
+                                <?= $item->composition_list ?>
+                            </div>
                         </div>
-                        <div class="section-composition">
-                            <?= $concert_repertoire->composition_list ?>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         <?php endif; ?>
         <?php if (!empty($orchestra_repertoire)): ?>
             <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center repertoire-item">
-                <h3 class="repertoire-title text-center"><?= $orchestra_repertoire->getTypeName() ?></h3>
+                <h3 class="repertoire-title text-center"><?= $orchestra_repertoire[0]->getTypeName() ?></h3>
                 <hr>
                 <div class="repertoire">
-                    <div class="section">
-                        <div class="section-composition">
-                            <h3 class="section-title"><?= $orchestra_repertoire->name ?></h3>
+                    <?php foreach ($orchestra_repertoire as $item): ?>
+                        <div class="section">
+                            <div class="section-composition">
+                                <h3 class="section-title"><?= $item->name ?></h3>
+                            </div>
+                            <div class="section-composition">
+                                <?= $item->composition_list ?>
+                            </div>
                         </div>
-                        <div class="section-composition">
-                            <?= $orchestra_repertoire->composition_list ?>
-                        </div>
-                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
         <?php endif; ?>

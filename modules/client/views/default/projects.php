@@ -86,9 +86,33 @@ $this->title = Yii::t('app', 'PROJECTS_PAGE_TITLE');
     </div>
 </div>
 
-<div class="container projects content-box" id="body">
+<div class="container discography content-box" id="body">
     <div class="row">
-        <p>Страница в разработке.</p>
+        <?php if (empty($model)): ?>
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center repertoire-item">
+                <h3 class="repertoire-title text-center"><?= Yii::t('app', 'GENERAL_NOTICE_NO_RESULTS_FOUND') ?></h3>
+            </div>
+        <?php endif; ?>
+        <?php foreach ($model as $item): ?>
+            <div class="col-sm-10 col-sm-offset-1 disc">
+                <div class="row">
+                    <?php if ($item->poster !== null): ?>
+                        <div class="col-md-6">
+                            <?= Html::img('@web/uploads/project-poster/' . $item->id . '/' . basename($item->poster),
+                                ['class' => 'img-responsive center-block cover']); ?>
+                        </div>
+                    <?php endif; ?>
+                    <div class="col-md-6 text-center">
+                        <h3 class="title"><?= $item->name ?></h3>
+                        <hr>
+                        <?= Html::a(Yii::t('app', 'BUTTON_LEARN_MORE'),
+                            ['project-view', 'id' => $item->id],
+                            ['class' => 'btn btn-default btn-primary square-button']) ?>
+                    </div>
+                </div>
+                <div class="text-center"></div>
+            </div>
+        <?php endforeach; ?>
     </div>
 
     <footer class="footer" style="position: bottom:">

@@ -179,6 +179,17 @@ class DefaultController extends Controller
     }
 
     /**
+     * Displays a single Project model.
+     *
+     * @param $id
+     * @return string
+     */
+    public function actionProjectView($id)
+    {
+        return $this->render('project-view', ['model' => Project::findOne($id), 'user' => User::find()->one()]);
+    }
+
+    /**
      * Repertoire page.
      *
      * @return string

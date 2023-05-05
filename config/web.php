@@ -57,6 +57,7 @@ $config = [
                 'music' => 'client/default/music',
                 '/music-view/<id:\d+>' => 'client/default/music-view/',
                 'projects' => 'client/default/projects',
+                '/project-view/<id:\d+>' => 'client/default/project-view/',
                 'repertoire' => 'client/default/repertoire',
                 'contacts' => 'client/default/contacts',
                 'sing-in' => 'client/default/sing-in',

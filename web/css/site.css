@@ -105,9 +105,10 @@ a.desc:after {
 /* Logo */
 .client-logo {
     float: left;
-    max-height: 30%;
-    max-width: 30%;
-    margin-top: -10%;
+    max-height: 50%;
+    max-width: 50%;
+    margin-top: -20%;
+    margin-left: -5%;
 }
 
 /* Font for site */

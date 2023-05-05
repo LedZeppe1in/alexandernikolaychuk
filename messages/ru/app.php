@@ -265,6 +265,7 @@ return [
     'PHOTO_MODEL_UPDATED_AT' => 'Обновлено',
     'PHOTO_MODEL_FILE' => 'Файл',
     'PHOTO_MODEL_TYPE' => 'Тип',
+    'PHOTO_MODEL_PROJECT' => 'Проект',
     /* Значения полей модели Photo */
     'PHOTO_MODEL_AUTHOR_TYPE' => 'Авторское',
     'PHOTO_MODEL_PROJECT_TYPE' => 'Проектное',

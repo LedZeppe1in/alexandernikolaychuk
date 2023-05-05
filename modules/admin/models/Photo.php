@@ -22,7 +22,8 @@ class Photo extends \yii\db\ActiveRecord
     const AUTHOR_TYPE = 0;  // Тип фото "авторское"
     const PROJECT_TYPE = 1; // Тип фото "проектное"
 
-    public $photo_file;  // Файл фото
+    public $photo_file; // Файл фото
+    public $project;   // Проект
 
     /**
      * @return string table name
@@ -40,6 +41,7 @@ class Photo extends \yii\db\ActiveRecord
         return [
             [['type'], 'required'],
             [['file'], 'string'],
+            [['project'], 'safe'],
             ['photo_file', 'file', 'skipOnEmpty'=>!$this->isNewRecord, 'checkExtensionByMimeType' => false,
                 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
@@ -57,6 +59,7 @@ class Photo extends \yii\db\ActiveRecord
             'file' => Yii::t('app', 'PHOTO_MODEL_FILE'),
             'type' => Yii::t('app', 'PHOTO_MODEL_TYPE'),
             'photo_file' => Yii::t('app', 'PHOTO_MODEL_FILE'),
+            'project' => Yii::t('app', 'PHOTO_MODEL_PROJECT'),
         ];
     }
 

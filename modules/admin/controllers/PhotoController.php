@@ -2,6 +2,8 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\Project;
+use app\modules\admin\models\ProjectPhoto;
 use Yii;
 use yii\helpers\FileHelper;
 use yii\web\Controller;
@@ -103,6 +105,13 @@ class PhotoController extends Controller
                         // Сохранение файла фото на сервере
                         $model->photo_file->saveAs($dir . $fileName);
                     }
+                    // Создание связи фото с проектом
+                    if ($model->type == Photo::PROJECT_TYPE) {
+                        $project_photo = new ProjectPhoto();
+                        $project_photo->project = Project::findOne(Yii::$app->request->post('Photo')['project'])->id;
+                        $project_photo->photo = $model->id;
+                        $project_photo->save();
+                    }
                     Yii::$app->getSession()->setFlash('success',
                         Yii::t('app', 'PHOTO_ADMIN_PAGE_MESSAGE_CREATE_PHOTO'));
 
@@ -160,6 +169,21 @@ class PhotoController extends Controller
                     $model->updateAttributes(['file' => $dir . $fileName]);
                 }
             }
+            // Обновление связи фото с проектом
+            $project_id = Project::findOne(Yii::$app->request->post('Photo')['project'])->id;
+            $project_photo = ProjectPhoto::find()->where(['photo' => $model->id])->one();
+            if (empty($project_photo)) {
+                if ($model->type == Photo::PROJECT_TYPE) {
+                    $project_photo = new ProjectPhoto();
+                    $project_photo->project = $project_id;
+                    $project_photo->photo = $model->id;
+                    $project_photo->save();
+                }
+            } else
+                if ($model->type == Photo::PROJECT_TYPE)
+                    $project_photo->updateAttributes(['project' => $project_id]);
+                else
+                    $project_photo->delete();
             Yii::$app->getSession()->setFlash('success',
                 Yii::t('app', 'PHOTO_ADMIN_PAGE_MESSAGE_UPDATED_PHOTO'));
 

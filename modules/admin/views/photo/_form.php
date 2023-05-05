@@ -3,11 +3,30 @@
 use yii\bootstrap5\Html;
 use yii\bootstrap5\ActiveForm;
 use app\modules\admin\models\Photo;
+use app\modules\admin\models\Project;
+use yii\helpers\ArrayHelper;
 
 /** @var yii\web\View $this */
 /** @var app\modules\admin\models\Photo $model */
 /** @var yii\widgets\ActiveForm $form */
 ?>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        let photoType = document.getElementById('photo-type');
+        let photoProjects = document.getElementsByClassName('field-photo-project');
+        for (let i = 0; i < photoProjects.length; i++)
+            photoProjects[i].style.display = "none";
+        $("#photo-type").change(function() {
+            if(photoType.value == 0)
+                for (let i = 0; i < photoProjects.length; i++)
+                    photoProjects[i].style.display = "none";
+            if(photoType.value == 1)
+                for (let i = 0; i < photoProjects.length; i++)
+                    photoProjects[i].style.display = "block";
+        });
+    });
+</script>
 
 <div class="photo-form">
 
@@ -19,6 +38,8 @@ use app\modules\admin\models\Photo;
     <?= $form->errorSummary($model); ?>
 
     <?= $form->field($model, 'type')->dropDownList(Photo::getTypesArray()) ?>
+
+    <?= $form->field($model, 'project')->dropDownList(ArrayHelper::map(Project::find()->all(), 'id', 'name')) ?>
 
     <?= $form->field($model, 'photo_file')->fileInput() ?>
 

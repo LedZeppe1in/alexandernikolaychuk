@@ -21,10 +21,12 @@ class ClientAsset extends AssetBundle
     public $baseUrl = '@web';
     public $css = [
         'css/app.css',
-        'css/site.css'
+        'css/site.css',
+        'css/swiper-bundle.css',
     ];
     public $js = [
         'js/app.js',
+        'js/swiper-bundle.js',
     ];
     public $depends = [
         'yii\web\YiiAsset'

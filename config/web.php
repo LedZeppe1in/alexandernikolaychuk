@@ -52,6 +52,7 @@ $config = [
                 'concerts' => 'client/default/concerts',
                 'media' => 'client/default/media',
                 'photo' => 'client/default/photo',
+                '/photo-carousel/<id:\d+>' => 'client/default/photo-carousel/',
                 'video' => 'client/default/video',
                 'music' => 'client/default/music',
                 '/music-view/<id:\d+>' => 'client/default/music-view/',

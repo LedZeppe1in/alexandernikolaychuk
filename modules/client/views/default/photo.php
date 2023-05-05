@@ -86,7 +86,7 @@ $this->title = Yii::t('app', 'MEDIA_PAGE_PHOTO');
         <div id="photos">
             <?php foreach ($model as $item): ?>
                 <div class="col-lg-3 col-md-4 col-xs-6 thumb">
-                    <a class="album-link" href="">
+                    <a class="album-link" href="<?= Url::to(['/photo-carousel/' . $item->id]) ?>">
                         <div class="album-hover">
                             <div class="album-hover-content">
                                 <i class="fa fa-plus fa-3x"></i>

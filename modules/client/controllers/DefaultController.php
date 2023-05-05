@@ -120,6 +120,21 @@ class DefaultController extends Controller
     }
 
     /**
+     * Photo carousel page.
+     *
+     * @param $id
+     * @return string
+     */
+    public function actionPhotoCarousel($id)
+    {
+        return $this->render('photo-carousel', [
+            'model' => Photo::find()->where(['type' => Photo::AUTHOR_TYPE])->all(),
+            'id' => $id,
+            'user' => User::find()->one(),
+        ]);
+    }
+
+    /**
      * Video page.
      *
      * @return string

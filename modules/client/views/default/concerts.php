@@ -89,7 +89,7 @@ $this->title = Yii::t('app', 'CONCERTS_PAGE_TITLE');
 <div class="container concerts content-box" id="body">
     <div class="concerts-board">
         <div class="row">
-            <div class="col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1" id="concert-items">
+            <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 text-center" id="concert-items">
                 <div class="text-center">
                     <h1 class="section-header upcoming-header">
                         <?= Yii::t('app', 'CONCERT_MODEL_POSTER') ?>

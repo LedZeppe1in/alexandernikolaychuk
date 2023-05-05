@@ -105,13 +105,33 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
                                 <?php
                                     $links = explode(',', $item->links);
                                     $str = '';
-                                    foreach($links as $link)
-                                        $str .= Html::a($link, $link) . '<br />';
+                                    foreach($links as $link) {
+                                        $defined = false;
+                                        if ($str != '')
+                                            $str .= ' • ';
+                                        $pos = strripos($link, 'apple');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-apple fa-2xl"></p>', $link);
+                                        }
+                                        $pos = strripos($link, 'yandex');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-yandex fa-2xl"></p>', $link);
+                                        }
+                                        $pos = strripos($link, 'spotify');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-spotify fa-2xl"></p>', $link);
+                                        }
+                                        if (!$defined)
+                                            $str .= Html::a('<p class="fa-solid fa-music fa-2xl"></p>', $link);
+                                    }
                                     echo $str;
                                 ?>
                             </div>
                         <?php endif; ?>
-                        <p></p>
+                        <br />
                         <?= Html::a(Yii::t('app', 'BUTTON_LEARN_MORE'),
                             ['music-view', 'id' => $item->id],
                             ['class' => 'btn btn-default btn-primary square-button']) ?>

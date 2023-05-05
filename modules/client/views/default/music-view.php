@@ -98,15 +98,13 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
                     foreach ($links as $link)
                         $str .= Html::a($link, $link) . '<br />';
                     echo $str;
-                } else echo Yii::t('app', 'GENERAL_NOTICE_NO_RESULTS_FOUND') ?>
+                } ?>
             </div>
             <h3><?= Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION') ?></h3>
             <div class="description">
                 <?php
                     if ($model->description)
                         echo $model->description;
-                    else
-                        echo Yii::t('app', 'GENERAL_NOTICE_NO_RESULTS_FOUND');
                 ?>
             </div>
         </div>

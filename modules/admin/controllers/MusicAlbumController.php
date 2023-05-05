@@ -2,6 +2,8 @@
 
 namespace app\modules\admin\controllers;
 
+use app\modules\admin\models\Project;
+use app\modules\admin\models\ProjectAlbum;
 use Yii;
 use yii\helpers\FileHelper;
 use yii\web\Controller;
@@ -103,6 +105,13 @@ class MusicAlbumController extends Controller
                         // Сохранение файла обложки на сервере
                         $model->cover_file->saveAs($dir . $fileName);
                     }
+                    // Создание связи музыкального альбома с проектом
+                    if ($model->type == MusicAlbum::PROJECT_TYPE) {
+                        $project_album = new ProjectAlbum();
+                        $project_album->project = Project::findOne(Yii::$app->request->post('MusicAlbum')['project'])->id;
+                        $project_album->music_album = $model->id;
+                        $project_album->save();
+                    }
                     Yii::$app->getSession()->setFlash('success',
                         Yii::t('app', 'MUSIC_ADMIN_PAGE_MESSAGE_CREATE_MUSIC_ALBUM'));
 
@@ -160,6 +169,21 @@ class MusicAlbumController extends Controller
                     $model->updateAttributes(['cover' => $dir . $fileName]);
                 }
             }
+            // Обновление связи музыкального альбома с проектом
+            $project_id = Project::findOne(Yii::$app->request->post('MusicAlbum')['project'])->id;
+            $project_album = ProjectAlbum::find()->where(['music_album' => $model->id])->one();
+            if (empty($project_album)) {
+                if ($model->type == MusicAlbum::PROJECT_TYPE) {
+                    $project_album = new ProjectAlbum();
+                    $project_album->project = $project_id;
+                    $project_album->music_album = $model->id;
+                    $project_album->save();
+                }
+            } else
+                if ($model->type == MusicAlbum::PROJECT_TYPE)
+                    $project_album->updateAttributes(['project' => $project_id]);
+                else
+                    $project_album->delete();
             Yii::$app->getSession()->setFlash('success',
                 Yii::t('app', 'MUSIC_ADMIN_PAGE_MESSAGE_UPDATED_MUSIC_ALBUM'));
 

@@ -23,7 +23,7 @@ class Photo extends \yii\db\ActiveRecord
     const PROJECT_TYPE = 1; // Тип фото "проектное"
 
     public $photo_file; // Файл фото
-    public $project;   // Проект
+    public $project;    // Проект
 
     /**
      * @return string table name

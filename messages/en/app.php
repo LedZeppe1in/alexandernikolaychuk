@@ -246,6 +246,7 @@ return [
     'MUSIC_ALBUM_MODEL_LINKS' => 'Links',
     'MUSIC_ALBUM_MODEL_DESCRIPTION' => 'Description',
     'MUSIC_ALBUM_MODEL_AUTHOR' => 'Authors',
+    'MUSIC_ALBUM_MODEL_PROJECT' => 'Project',
     /* Значения полей модели MusicAlbum */
     'MUSIC_ALBUM_MODEL_AUTHOR_TYPE' => 'Author',
     'MUSIC_ALBUM_MODEL_PROJECT_TYPE' => 'Project',

@@ -13,8 +13,8 @@ use yii\helpers\ArrayHelper;
 
 <script type="text/javascript">
     $(document).ready(function() {
-        let photoType = document.getElementById('photo-type');
-        let photoProjects = document.getElementsByClassName('field-photo-project');
+        let photoType = document.getElementById("photo-type");
+        let photoProjects = document.getElementsByClassName("field-photo-project");
         for (let i = 0; i < photoProjects.length; i++)
             photoProjects[i].style.display = "none";
         $("#photo-type").change(function() {

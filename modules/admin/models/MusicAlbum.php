@@ -26,7 +26,8 @@ class MusicAlbum extends \yii\db\ActiveRecord
     const AUTHOR_TYPE = 0;  // Тип альбома "авторский"
     const PROJECT_TYPE = 1; // Тип альбома "проектный"
 
-    public $cover_file;  // Файл обложки
+    public $cover_file; // Файл обложки
+    public $project;    // Проект
 
     /**
      * @return string table name
@@ -45,6 +46,7 @@ class MusicAlbum extends \yii\db\ActiveRecord
             [['name', 'type'], 'required'],
             [['cover', 'links', 'description', 'author'], 'string'],
             [['name'], 'string', 'max' => 255],
+            [['project'], 'safe'],
             ['cover_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
@@ -65,6 +67,7 @@ class MusicAlbum extends \yii\db\ActiveRecord
             'description' => Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION'),
             'author' => Yii::t('app', 'MUSIC_ALBUM_MODEL_AUTHOR'),
             'cover_file' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER'),
+            'project' => Yii::t('app', 'MUSIC_ALBUM_MODEL_PROJECT'),
         ];
     }
 

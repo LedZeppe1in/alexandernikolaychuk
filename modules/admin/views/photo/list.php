@@ -1,6 +1,7 @@
 <?php
 
 use yii\bootstrap5\Html;
+use yii\bootstrap5\LinkPager;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
@@ -57,6 +58,9 @@ $this->params['breadcrumbs'][] = $this->title;
                  }
             ],
         ],
+        'pager' => [
+            'class' => 'yii\bootstrap5\LinkPager'
+        ]
     ]); ?>
 
 </div>

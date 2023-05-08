@@ -13,18 +13,29 @@ use yii\helpers\ArrayHelper;
 ?>
 
 <script type="text/javascript">
+    function checkType(musicAlbumType) {
+        let musicAlbumProjects = document.getElementsByClassName("field-musicalbum-project");
+        if (musicAlbumType.value == 0)
+            for (let i = 0; i < musicAlbumProjects.length; i++)
+                musicAlbumProjects[i].style.display = "none";
+        if (musicAlbumType.value == 1)
+            for (let i = 0; i < musicAlbumProjects.length; i++)
+                musicAlbumProjects[i].style.display = "block";
+    }
+
     $(document).ready(function() {
         let musicAlbumType = document.getElementById("musicalbum-type");
-        let musicAlbumProjects = document.getElementsByClassName("field-musicalbum-project");
-        for (let i = 0; i < musicAlbumProjects.length; i++)
-            musicAlbumProjects[i].style.display = "none";
+        let musicAlbumProject = document.getElementById("musicalbum-project");
+        let modelId = "<?php echo $model->id ?>";
+
+        if (modelId !== "")
+            musicAlbumProject.value = "<?= $model->projectAlbums ? $model->projectAlbums[0]->project : null ?>";
+            if (musicAlbumProject.value === "")
+                musicAlbumProject.selectedIndex = 0
+        checkType(musicAlbumType)
+
         $("#musicalbum-type").change(function() {
-            if(musicAlbumType.value == 0)
-                for (let i = 0; i < musicAlbumProjects.length; i++)
-                    musicAlbumProjects[i].style.display = "none";
-            if(musicAlbumType.value == 1)
-                for (let i = 0; i < musicAlbumProjects.length; i++)
-                    musicAlbumProjects[i].style.display = "block";
+            checkType(musicAlbumType)
         });
     });
 </script>

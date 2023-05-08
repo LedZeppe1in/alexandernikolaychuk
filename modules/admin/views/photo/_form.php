@@ -12,18 +12,29 @@ use yii\helpers\ArrayHelper;
 ?>
 
 <script type="text/javascript">
+    function checkType(photoType) {
+        let photoProjects = document.getElementsByClassName("field-photo-project");
+        if (photoType.value == 0)
+            for (let i = 0; i < photoProjects.length; i++)
+                photoProjects[i].style.display = "none";
+        if (photoType.value == 1)
+            for (let i = 0; i < photoProjects.length; i++)
+                photoProjects[i].style.display = "block";
+    }
+
     $(document).ready(function() {
         let photoType = document.getElementById("photo-type");
-        let photoProjects = document.getElementsByClassName("field-photo-project");
-        for (let i = 0; i < photoProjects.length; i++)
-            photoProjects[i].style.display = "none";
+        let photoProject = document.getElementById("photo-project");
+        let modelId = "<?php echo $model->id ?>";
+
+        if (modelId !== "")
+            photoProject.value = "<?= $model->projectPhotos ? $model->projectPhotos[0]->project : null ?>";
+            if (photoProject.value === "")
+                photoProject.selectedIndex = 0
+        checkType(photoType)
+
         $("#photo-type").change(function() {
-            if(photoType.value == 0)
-                for (let i = 0; i < photoProjects.length; i++)
-                    photoProjects[i].style.display = "none";
-            if(photoType.value == 1)
-                for (let i = 0; i < photoProjects.length; i++)
-                    photoProjects[i].style.display = "block";
+            checkType(photoType)
         });
     });
 </script>

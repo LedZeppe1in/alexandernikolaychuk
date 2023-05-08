@@ -1,5 +1,6 @@
 <?php
 
+use app\modules\admin\models\MusicAlbum;
 use yii\bootstrap5\Html;
 use yii\widgets\DetailView;
 
@@ -49,6 +50,14 @@ $this->params['breadcrumbs'][] = $this->title;
                     return $model->getTypeName();
                 },
                 'format' => 'raw',
+            ],
+            [
+                'attribute' => Yii::t('app', 'PROJECT_ALBUM_MODEL_PROJECT'),
+                'value' => function($model) {
+                    return $model->projectAlbums ? $model->projectAlbums[0]->musicProject->name : null;
+                },
+                'format' => 'raw',
+                'visible' => $model->projectAlbums ? true : false,
             ],
             [
                 'attribute' => 'links',

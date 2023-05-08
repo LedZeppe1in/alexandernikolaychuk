@@ -50,6 +50,14 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
+                'attribute' => Yii::t('app', 'PROJECT_PHOTO_MODEL_PROJECT'),
+                'value' => function($model) {
+                    return $model->projectPhotos ? $model->projectPhotos[0]->musicProject->name : null;
+                },
+                'format' => 'raw',
+                'visible' => $model->projectPhotos ? true : false,
+            ],
+            [
                 'label' => Yii::t('app', 'PHOTO_MODEL_FILE'),
                 'value' => $model->file !== null ? Html::img('@web/uploads/photo/' .$model->id . '/' .
                     basename($model->file), ['class' => 'image-block']) : null,

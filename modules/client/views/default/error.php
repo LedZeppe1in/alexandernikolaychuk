@@ -58,9 +58,7 @@ $this->title = $name;
                 <?= Yii::t('app', 'NAV_CONTACTS') ?>
             </a>
         </li>
-        <?php if (Yii::$app->user->isGuest)
-            echo '<li>' . Html::a(Yii::t('app', 'NAV_SIGN_IN'), ['default/sing-in']) . '</li>';
-        else
+        <?php if (!Yii::$app->user->isGuest)
             echo '<li>' . Html::a(Yii::t('app', 'NAV_ADMINISTRATION'), ['/admin/user/profile']) .
                 '</li><li>' . Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['default/sing-out']) .
                 '</li>';

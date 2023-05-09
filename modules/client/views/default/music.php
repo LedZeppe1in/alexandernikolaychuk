@@ -54,9 +54,7 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
                 <?= Yii::t('app', 'NAV_CONTACTS') ?>
             </a>
         </li>
-        <?php if (Yii::$app->user->isGuest)
-            echo '<li>' . Html::a(Yii::t('app', 'NAV_SIGN_IN'), ['sing-in']) . '</li>';
-        else
+        <?php if (!Yii::$app->user->isGuest)
             echo '<li>' . Html::a(Yii::t('app', 'NAV_ADMINISTRATION'), ['/admin/user/profile']) .
                 '</li><li>' . Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['sing-out']) . '</li>';
         ?>

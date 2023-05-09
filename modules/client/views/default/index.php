@@ -8,9 +8,11 @@ use yii\bootstrap5\Html;
 $this->title = Yii::$app->language == 'ru-RU' ? $user->full_name_ru : $user->full_name_en;
 ?>
 
-<video autoplay="" muted="" poster="/images/contacts.jpg" id="bgvid" loop="">
+<video autoplay muted poster="/images/contacts.jpg" id="bgvid" loop>
     <source src="/video/background.mov" type="video/mp4">
 </video>
+
+<div class="home-background" style="background-image:url('/images/contacts.jpg'); z-index: -101;"></div>
 
 <div class="container home-container">
     <div class="row home-row">

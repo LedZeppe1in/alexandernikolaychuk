@@ -71,7 +71,7 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
 </nav>
 
 <div class="container cover-container" style="z-index:;">
-    <div class="cover" style="background-image: url(/images/music.jpg); background-position:% 50%;"></div>
+    <div class="cover" style="background-image: url(/images/music.jpeg); background-position:% 50%;"></div>
     <div class="title-block">
         <div class="row title-row">
             <div class="col-sm-12 title-col">

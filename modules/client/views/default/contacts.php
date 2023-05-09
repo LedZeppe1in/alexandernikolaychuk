@@ -92,7 +92,6 @@ $this->title = Yii::t('app', 'CONTACTS_PAGE_TITLE');
     <div class="row contact-row">
         <div class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-10 col-sm-offset-1 contact-col">
             <p class="contact-subheader"><b><?= Yii::t('app', 'CONTACTS_PAGE_NAME') ?></b></p>
-            <p class="contact-info"><?= Yii::t('app', 'CONTACTS_PAGE_PHONE') ?>: <?= $user->phone ?></p>
 
             <p class="contact-subheader"><b><?= Yii::t('app', 'CONTACTS_PAGE_SOCIALS') ?></b></p>
             <p class="contact-info">

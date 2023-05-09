@@ -8,7 +8,7 @@ use yii\bootstrap5\Html;
 $this->title = Yii::$app->language == 'ru-RU' ? $user->full_name_ru : $user->full_name_en;
 ?>
 
-<video loop muted autoplay id="bgvid">
+<video autoplay="" muted="" poster="/images/contacts.jpg" id="bgvid" loop="">
     <source src="/video/background.mov" type="video/mp4">
 </video>
 

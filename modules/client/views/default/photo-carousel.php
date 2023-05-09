@@ -20,7 +20,7 @@ foreach ($model as $item)
 ?>
 
 <div class="slider-wrapper">
-    <?= Html::a('×', ['photo'], ['class' => 'close']) ?>
+    <?= Html::a('×', Yii::$app->request->referrer, ['class' => 'close']) ?>
     <?= SwiperSlider::widget([
         'slides' => $links,
         'clientOptions' => [

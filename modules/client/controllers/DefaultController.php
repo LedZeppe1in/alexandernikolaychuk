@@ -2,12 +2,7 @@
 
 namespace app\modules\client\controllers;
 
-use app\modules\admin\models\Concert;
-use app\modules\admin\models\MusicAlbum;
-use app\modules\admin\models\Photo;
-use app\modules\admin\models\Project;
-use app\modules\admin\models\Repertoire;
-use app\modules\admin\models\Video;
+use app\modules\admin\models\ProjectPhoto;
 use Yii;
 use yii\web\Response;
 use yii\web\Controller;
@@ -16,6 +11,12 @@ use yii\filters\AccessControl;
 use app\modules\admin\models\User;
 use app\modules\client\models\LoginForm;
 use app\modules\client\models\ContactForm;
+use app\modules\admin\models\Concert;
+use app\modules\admin\models\MusicAlbum;
+use app\modules\admin\models\Photo;
+use app\modules\admin\models\Project;
+use app\modules\admin\models\Repertoire;
+use app\modules\admin\models\Video;
 
 class DefaultController extends Controller
 {
@@ -127,8 +128,22 @@ class DefaultController extends Controller
      */
     public function actionPhotoCarousel($id)
     {
+        $model = null;
+        if (Photo::findOne($id)->type == Photo::AUTHOR_TYPE)
+            $model = Photo::find()->where(['type' => Photo::AUTHOR_TYPE])->all();
+        else {
+            $project_photo = ProjectPhoto::find()->where(['photo' => (int)$id])->one();
+            if (!empty($project_photo)) {
+                $project_photos = ProjectPhoto::find()->where(['project' => $project_photo->project])->all();
+                $arr = [];
+                foreach ($project_photos as $item)
+                    array_push($arr, $item->photo);
+                $model = Photo::findAll($arr);
+            }
+        }
+
         return $this->render('photo-carousel', [
-            'model' => Photo::find()->where(['type' => Photo::AUTHOR_TYPE])->all(),
+            'model' => $model,
             'id' => $id,
             'user' => User::find()->one(),
         ]);

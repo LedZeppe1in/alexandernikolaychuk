@@ -69,6 +69,8 @@ return [
     'MUSIC_PAGE_TITLE' => 'Музыка',
     /* Страница проектов */
     'PROJECTS_PAGE_TITLE' => 'Проекты',
+    'PROJECTS_PAGE_MUSIC_ALBUM' => 'АЛЬБОМЫ',
+    'PROJECTS_PAGE_PHOTO' => 'ФОТО',
     /* Страница репертуара */
     'REPERTOIRE_PAGE_TITLE' => 'Репертуар',
 

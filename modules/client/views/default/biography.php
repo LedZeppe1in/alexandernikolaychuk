@@ -85,7 +85,7 @@ $this->title = Yii::t('app', 'BIOGRAPHY_PAGE_TITLE');
 
 <div class="container biography content-box" id="body">
     <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 content">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 content my-biography">
             <?php
                 if (Yii::$app->language == 'ru-RU')
                     echo $user->biography_ru;

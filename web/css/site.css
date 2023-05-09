@@ -147,6 +147,11 @@ h1, h3 {
     padding-right: 10px;
 }
 
+/* Custom fonts */
+.project-description p, .project-description ul, .music-description p, .section-composition, .my-biography {
+    font-family: "Times New Roman", serif !important;
+}
+
 /* Slider styles */
 .slider-wrapper {
     position: absolute;

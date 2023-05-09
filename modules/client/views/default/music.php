@@ -122,6 +122,11 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
                                             $defined = true;
                                             $str .= Html::a('<p class="fa-brands fa-spotify fa-2xl"></p>', $link);
                                         }
+                                        $pos = strripos($link, 'vk.com');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-vk fa-2xl"></p>', $link);
+                                        }
                                         if (!$defined)
                                             $str .= Html::a('<p class="fa-solid fa-music fa-2xl"></p>', $link);
                                     }

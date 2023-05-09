@@ -89,7 +89,7 @@ $this->title = Yii::t('app', 'PROJECT_PAGE_TITLE');
         <?php endif; ?>
         <div class="col-sm-6">
             <h3><?= Yii::t('app', 'PROJECT_MODEL_DESCRIPTION') ?></h3>
-            <div class="description">
+            <div class="description project-description">
                 <?php
                     if ($model->description)
                         echo $model->description;
@@ -138,6 +138,11 @@ $this->title = Yii::t('app', 'PROJECT_PAGE_TITLE');
                                     if ($pos !== false) {
                                         $defined = true;
                                         $str .= Html::a('<p class="fa-brands fa-spotify fa-2xl"></p>', $link);
+                                    }
+                                    $pos = strripos($link, 'vk.com');
+                                    if ($pos !== false) {
+                                        $defined = true;
+                                        $str .= Html::a('<p class="fa-brands fa-vk fa-2xl"></p>', $link);
                                     }
                                     if (!$defined)
                                         $str .= Html::a('<p class="fa-solid fa-music fa-2xl"></p>', $link);

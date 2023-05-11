@@ -88,7 +88,6 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
             </div>
         <?php endif; ?>
         <div class="col-sm-6">
-            <h3><?= Yii::t('app', 'MUSIC_ALBUM_MODEL_LINKS') ?></h3>
             <div class="description">
                 <?php if ($model->links) {
                     $links = explode(',', $model->links);
@@ -123,7 +122,6 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
                     echo $str;
                 } ?>
             </div><br />
-            <h3><?= Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION') ?></h3>
             <div class="description music-description">
                 <?php
                     if ($model->description)

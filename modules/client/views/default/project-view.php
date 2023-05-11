@@ -88,7 +88,6 @@ $this->title = Yii::t('app', 'PROJECT_PAGE_TITLE');
             </div>
         <?php endif; ?>
         <div class="col-sm-6">
-            <h3><?= Yii::t('app', 'PROJECT_MODEL_DESCRIPTION') ?></h3>
             <div class="description project-description">
                 <?php
                     if ($model->description)

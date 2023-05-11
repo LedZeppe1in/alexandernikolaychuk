@@ -167,6 +167,22 @@ h1, h3 {
     .text-left, .text-right {
         text-align: center;
     }
+    .tile-photo {
+        height: 20vh;
+    }
+    .swiper-container {
+        height: 100%;
+    }
+    .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .swiper-slide img {
+        width: 100%;
+        height: auto !important;
+
+    }
 }
 
 /* Custom fonts */

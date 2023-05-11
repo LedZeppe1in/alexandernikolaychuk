@@ -147,6 +147,24 @@ h1, h3 {
     padding-right: 10px;
 }
 
+.home-background {
+    background-image: url('/images/background.png');
+    background-position: center top;
+    z-index: -101;
+}
+
+@media screen and (max-device-width: 767px) {
+    .client-logo {
+        float: right;
+        max-height: 50%;
+        max-width: 100%;
+        margin-top: 25%;
+    }
+    .text-left, .text-right {
+        text-align: center;
+    }
+}
+
 /* Custom fonts */
 .project-description p, .project-description ul, .music-description p, .section-composition, .my-biography {
     font-family: "Times New Roman", serif !important;

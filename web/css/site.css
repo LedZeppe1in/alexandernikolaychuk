@@ -149,8 +149,12 @@ h1, h3 {
 
 .home-background {
     background-image: url('/images/background.png');
-    background-position: center top;
+    background-position: center center;
     z-index: -101;
+}
+
+#bgvid {
+    width: 100%;
 }
 
 @media screen and (max-device-width: 767px) {

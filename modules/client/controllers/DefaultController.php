@@ -94,7 +94,10 @@ class DefaultController extends Controller
      */
     public function actionConcerts()
     {
-        return $this->render('concerts', ['model' => Concert::find()->all(), 'user' => User::find()->one()]);
+        return $this->render('concerts', [
+            'model' => Concert::find()->orderBy(['created_at' => SORT_DESC])->all(),
+            'user' => User::find()->one()
+        ]);
     }
 
     /**
@@ -156,7 +159,10 @@ class DefaultController extends Controller
      */
     public function actionVideo()
     {
-        return $this->render('video', ['model' => Video::find()->all(), 'user' => User::find()->one()]);
+        return $this->render('video', [
+            'model' => Video::find()->orderBy(['created_at' => SORT_DESC])->all(),
+            'user' => User::find()->one()
+        ]);
     }
 
     /**
@@ -167,7 +173,8 @@ class DefaultController extends Controller
     public function actionMusic()
     {
         return $this->render('music', [
-            'model' => MusicAlbum::find()->where(['type' => MusicAlbum::AUTHOR_TYPE])->all(),
+            'model' => MusicAlbum::find()->where(['type' => MusicAlbum::AUTHOR_TYPE])
+                ->orderBy(['created_at' => SORT_DESC])->all(),
             'user' => User::find()->one()
         ]);
     }
@@ -190,7 +197,10 @@ class DefaultController extends Controller
      */
     public function actionProjects()
     {
-        return $this->render('projects', ['model' => Project::find()->all(), 'user' => User::find()->one()]);
+        return $this->render('projects', [
+            'model' => Project::find()->orderBy(['created_at' => SORT_DESC])->all(),
+            'user' => User::find()->one()
+        ]);
     }
 
     /**

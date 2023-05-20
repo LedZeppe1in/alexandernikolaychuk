@@ -57,8 +57,9 @@ $this->title = Yii::t('app', 'CONTACTS_PAGE_TITLE');
             </a>
         </li>
         <?php if (!Yii::$app->user->isGuest)
-            echo '<li>' . Html::a(Yii::t('app', 'NAV_ADMINISTRATION'), ['/admin/user/profile']) .
-                '</li><li>' . Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['sing-out']) . '</li>';
+            echo '<li>' . Html::a(Yii::t('app', 'NAV_ADMINISTRATION'), ['/admin/user/profile'],
+                    ['data-method' => 'POST']) . '</li><li>' .
+                Html::a(Yii::t('app', 'NAV_SIGN_OUT'), ['sing-out']) . '</li>';
         ?>
         <li>
             <?= Html::a(Yii::$app->language == 'ru-RU' ?

@@ -17,7 +17,8 @@ class m230423_085239_concert extends Migration
             'id' => $this->primaryKey(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
-            'name' => $this->string(),
+            'name_ru' => $this->string(),
+            'name_en' => $this->string(),
             'poster' => $this->text(),
             'links' => $this->text()
         ], $tableOptions);

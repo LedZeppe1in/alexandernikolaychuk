@@ -17,15 +17,20 @@ class m230423_085306_music_album extends Migration
             'id' => $this->primaryKey(),
             'created_at' => $this->integer()->notNull(),
             'updated_at' => $this->integer()->notNull(),
-            'name' => $this->string()->notNull(),
+            'name_ru' => $this->string()->notNull(),
+            'name_en' => $this->string()->notNull(),
             'type' => $this->smallInteger()->notNull()->defaultValue(0),
-            'cover' => $this->text(),
+            'cover_ru' => $this->text(),
+            'cover_en' => $this->text(),
             'links' => $this->text(),
-            'description' => $this->text(),
-            'author' => $this->text(),
+            'description_ru' => $this->text(),
+            'description_en' => $this->text(),
+            'authors_ru' => $this->text(),
+            'authors_en' => $this->text(),
         ], $tableOptions);
 
-        $this->createIndex('idx_music_album_name', '{{%music_album}}', 'name');
+        $this->createIndex('idx_music_album_name_ru', '{{%music_album}}', 'name_ru');
+        $this->createIndex('idx_music_album_name_en', '{{%music_album}}', 'name_en');
     }
 
     public function safeDown()

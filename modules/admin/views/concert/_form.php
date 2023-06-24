@@ -17,7 +17,9 @@ use yii\bootstrap5\ActiveForm;
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'poster_file')->fileInput() ?>
 

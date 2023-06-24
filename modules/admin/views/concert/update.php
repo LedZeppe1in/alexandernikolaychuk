@@ -10,7 +10,7 @@ $this->title = Yii::t('app', 'CONCERTS_ADMIN_PAGE_UPDATE_CONCERT');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'CONCERTS_ADMIN_PAGE_CONCERTS'),
     'url' => ['list']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'CONCERTS_ADMIN_PAGE_CONCERT') . ' - ' .
-    $model->name, 'url' => ['view', 'id' => $model->id]];
+    $model->name_ru, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

@@ -52,7 +52,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => Yii::t('app', 'PROJECT_PHOTO_MODEL_PROJECT'),
                 'value' => function($model) {
-                    return $model->projectPhotos ? $model->projectPhotos[0]->musicProject->name : null;
+                    if (Yii::$app->language == 'ru-RU')
+                        return $model->projectPhotos ? $model->projectPhotos[0]->musicProject->name_ru : null;
+                    else
+                        return $model->projectPhotos ? $model->projectPhotos[0]->musicProject->name_en : null;
                 },
                 'format' => 'raw',
                 'visible' => $model->projectPhotos ? true : false,

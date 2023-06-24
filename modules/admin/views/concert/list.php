@@ -30,11 +30,11 @@ $this->params['breadcrumbs'][] = $this->title;
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
             [
-                'attribute' => 'name',
+                'attribute' => 'name_ru',
                 'format' => 'raw',
                 'value' => function($data) {
-                    if ($data->name)
-                        return $data->name;
+                    if ($data->name_ru)
+                        return $data->name_ru;
                     else
                         return null;
                 }

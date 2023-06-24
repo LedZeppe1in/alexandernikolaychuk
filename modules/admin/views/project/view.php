@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\modules\admin\models\Project $model */
 
-$this->title = Yii::t('app', 'PROJECTS_ADMIN_PAGE_VIEW_PROJECT') . ' - ' . $model->name;
+$this->title = Yii::t('app', 'PROJECTS_ADMIN_PAGE_VIEW_PROJECT') . ' - ' . $model->name_ru;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'PROJECTS_ADMIN_PAGE_PROJECTS'),
     'url' => ['list']];
@@ -42,10 +42,16 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'updated_at',
                 'format' => ['date', 'dd.MM.Y HH:mm:ss']
             ],
-            'name',
+            'name_ru',
+            'name_en',
             [
-                'attribute' => 'description',
-                'value' => $model->description !== '' ? $model->description : null,
+                'attribute' => 'description_ru',
+                'value' => $model->description_ru !== '' ? $model->description_ru : null,
+                'format' => 'raw'
+            ],
+            [
+                'attribute' => 'description_en',
+                'value' => $model->description_en !== '' ? $model->description_en : null,
                 'format' => 'raw'
             ],
             [

@@ -6,7 +6,7 @@
 use yii\bootstrap5\Html;
 use yii\widgets\DetailView;
 
-$this->title = Yii::t('app', 'CONCERTS_ADMIN_PAGE_VIEW_CONCERT') . ' - ' . $model->name;
+$this->title = Yii::t('app', 'CONCERTS_ADMIN_PAGE_VIEW_CONCERT') . ' - ' . $model->name_ru;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'CONCERTS_ADMIN_PAGE_CONCERTS'),
     'url' => ['list']];
@@ -43,8 +43,13 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => ['date', 'dd.MM.Y HH:mm:ss']
             ],
             [
-                'attribute' => 'name',
-                'value' => $model->name !== '' ? $model->name : null,
+                'attribute' => 'name_ru',
+                'value' => $model->name_ru !== '' ? $model->name_ru : null,
+                'format' => 'raw'
+            ],
+            [
+                'attribute' => 'name_en',
+                'value' => $model->name_en !== '' ? $model->name_en : null,
                 'format' => 'raw'
             ],
             [

@@ -19,11 +19,18 @@ use app\modules\admin\models\Repertoire;
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'type')->dropDownList(Repertoire::getTypesArray()) ?>
 
-    <?= $form->field($model, 'composition_list')->widget(CKEditor::className(), [
+    <?= $form->field($model, 'composition_list_ru')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'full'
+    ]) ?>
+
+    <?= $form->field($model, 'composition_list_en')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'full'
     ]) ?>

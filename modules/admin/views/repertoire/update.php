@@ -10,7 +10,7 @@ $this->title = Yii::t('app', 'REPERTOIRE_ADMIN_PAGE_UPDATE_REPERTOIRE');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'REPERTOIRE_ADMIN_PAGE_REPERTOIRE'),
     'url' => ['list']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'REPERTOIRE_ADMIN_PAGE_REPERTOIRE') . ' - ' .
-    $model->name, 'url' => ['view', 'id' => $model->id]];
+    $model->name_ru, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

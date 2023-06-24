@@ -29,7 +29,7 @@ $this->params['breadcrumbs'][] = $this->title;
         'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
-            'name',
+            'name_ru',
             [
                 'attribute'=>'type',
                 'format' => 'raw',
@@ -40,11 +40,11 @@ $this->params['breadcrumbs'][] = $this->title;
                 'filterInputOptions' => ['class' => 'form-select']
             ],
             [
-                'attribute' => 'author',
+                'attribute' => 'authors_ru',
                 'format' => 'raw',
                 'value' => function($data) {
-                    if ($data->author)
-                        return $data->author;
+                    if ($data->authors_ru)
+                        return $data->authors_ru;
                     else
                         return null;
                 }

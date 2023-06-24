@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\modules\admin\models\Repertoire $model */
 
-$this->title = Yii::t('app', 'REPERTOIRE_ADMIN_PAGE_VIEW_REPERTOIRE') . ' - ' . $model->name;
+$this->title = Yii::t('app', 'REPERTOIRE_ADMIN_PAGE_VIEW_REPERTOIRE') . ' - ' . $model->name_ru;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'REPERTOIRE_ADMIN_PAGE_REPERTOIRE'),
     'url' => ['list']];
@@ -42,7 +42,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'updated_at',
                 'format' => ['date', 'dd.MM.Y HH:mm:ss']
             ],
-            'name',
+            'name_ru',
+            'name_en',
             [
                 'attribute' => 'type',
                 'format' => 'raw',
@@ -51,10 +52,17 @@ $this->params['breadcrumbs'][] = $this->title;
                 }
             ],
             [
-                'attribute' => 'composition_list',
+                'attribute' => 'composition_list_ru',
                 'format' => 'raw',
                 'value' => function($model) {
-                    return $model->composition_list;
+                    return $model->composition_list_ru;
+                }
+            ],
+            [
+                'attribute' => 'composition_list_en',
+                'format' => 'raw',
+                'value' => function($model) {
+                    return $model->composition_list_en;
                 }
             ]
         ]

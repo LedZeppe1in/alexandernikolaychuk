@@ -50,7 +50,8 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->field($model, 'type')->dropDownList(Photo::getTypesArray()) ?>
 
-    <?= $form->field($model, 'project')->dropDownList(ArrayHelper::map(Project::find()->all(), 'id', 'name')) ?>
+    <?= $form->field($model, 'project')->dropDownList(ArrayHelper::map(Project::find()->all(), 'id',
+        Yii::$app->language == 'ru-RU' ? 'name_ru' : 'name_en')) ?>
 
     <?= $form->field($model, 'photo_file')->fileInput() ?>
 

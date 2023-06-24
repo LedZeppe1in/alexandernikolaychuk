@@ -7,7 +7,7 @@ use yii\widgets\DetailView;
 /** @var yii\web\View $this */
 /** @var app\modules\admin\models\MusicAlbum $model */
 
-$this->title = Yii::t('app', 'MUSIC_ADMIN_PAGE_VIEW_MUSIC_ALBUM') . ' - ' . $model->name;
+$this->title = Yii::t('app', 'MUSIC_ADMIN_PAGE_VIEW_MUSIC_ALBUM') . ' - ' . $model->name_ru;
 
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'MUSIC_ADMIN_PAGE_MUSIC_ALBUMS'),
     'url' => ['list']];
@@ -43,7 +43,8 @@ $this->params['breadcrumbs'][] = $this->title;
                 'attribute' => 'updated_at',
                 'format' => ['date', 'dd.MM.Y HH:mm:ss']
             ],
-            'name',
+            'name_ru',
+            'name_en',
             [
                 'attribute' => 'type',
                 'value' => function($model) {
@@ -54,7 +55,10 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute' => Yii::t('app', 'PROJECT_ALBUM_MODEL_PROJECT'),
                 'value' => function($model) {
-                    return $model->projectAlbums ? $model->projectAlbums[0]->musicProject->name : null;
+                    if (Yii::$app->language == 'ru-RU')
+                        return $model->projectAlbums ? $model->projectAlbums[0]->musicProject->name_ru : null;
+                    else
+                        return $model->projectAlbums ? $model->projectAlbums[0]->musicProject->name_en : null;
                 },
                 'format' => 'raw',
                 'visible' => $model->projectAlbums ? true : false,
@@ -74,21 +78,35 @@ $this->params['breadcrumbs'][] = $this->title;
                 'format' => 'raw'
             ],
             [
-                'attribute' => 'author',
-                'value' => $model->author !== '' ? $model->author : null,
+                'attribute' => 'authors_ru',
+                'value' => $model->authors_ru !== '' ? $model->authors_ru : null,
                 'format' => 'raw'
             ],
             [
-                'attribute' => 'description',
-                'format' => 'raw',
-                'value' => function($data) {
-                    return $data->description;
-                }
+                'attribute' => 'authors_en',
+                'value' => $model->authors_en !== '' ? $model->authors_en : null,
+                'format' => 'raw'
             ],
             [
-                'label' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER'),
-                'value' => $model->cover !== null ? Html::img('@web/uploads/album-cover/' .$model->id . '/' .
-                    basename($model->cover), ['class' => 'image-block']) : null,
+                'attribute' => 'description_ru',
+                'value' => $model->description_ru !== '' ? $model->description_ru : null,
+                'format' => 'raw'
+            ],
+            [
+                'attribute' => 'description_en',
+                'value' => $model->description_en !== '' ? $model->description_en : null,
+                'format' => 'raw'
+            ],
+            [
+                'label' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER_RU'),
+                'value' => $model->cover_ru !== null ? Html::img('@web/uploads/album-cover-ru/' .$model->id . '/' .
+                    basename($model->cover_ru), ['class' => 'image-block']) : null,
+                'format' => 'raw'
+            ],
+            [
+                'label' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER_EN'),
+                'value' => $model->cover_en !== null ? Html::img('@web/uploads/album-cover-en/' .$model->id . '/' .
+                    basename($model->cover_en), ['class' => 'image-block']) : null,
                 'format' => 'raw'
             ]
         ]

@@ -10,7 +10,7 @@ $this->title = Yii::t('app', 'PROJECTS_ADMIN_PAGE_UPDATE_PROJECT');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'PROJECTS_ADMIN_PAGE_PROJECTS'),
     'url' => ['list']];
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'PROJECTS_ADMIN_PAGE_PROJECT') . ' - ' .
-    $model->name, 'url' => ['view', 'id' => $model->id]];
+    $model->name_ru, 'url' => ['view', 'id' => $model->id]];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
 

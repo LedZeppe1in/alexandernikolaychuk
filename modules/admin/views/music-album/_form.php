@@ -49,19 +49,31 @@ use yii\helpers\ArrayHelper;
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'type')->dropDownList(MusicAlbum::getTypesArray()) ?>
 
-    <?= $form->field($model, 'project')->dropDownList(ArrayHelper::map(Project::find()->all(), 'id', 'name')) ?>
+    <?= $form->field($model, 'project')->dropDownList(ArrayHelper::map(Project::find()->all(), 'id',
+        Yii::$app->language == 'ru-RU' ? 'name_ru' : 'name_en')) ?>
 
-    <?= $form->field($model, 'cover_file')->fileInput() ?>
+    <?= $form->field($model, 'cover_file_ru')->fileInput() ?>
+
+    <?= $form->field($model, 'cover_file_en')->fileInput() ?>
 
     <?= $form->field($model, 'links')->textarea(['rows' => 3]) ?>
 
-    <?= $form->field($model, 'author')->textarea(['rows' => 3]) ?>
+    <?= $form->field($model, 'authors_ru')->textarea(['rows' => 3]) ?>
 
-    <?= $form->field($model, 'description')->widget(CKEditor::className(), [
+    <?= $form->field($model, 'authors_en')->textarea(['rows' => 3]) ?>
+
+    <?= $form->field($model, 'description_ru')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'full'
+    ]) ?>
+
+    <?= $form->field($model, 'description_en')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'full'
     ]) ?>

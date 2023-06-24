@@ -18,11 +18,18 @@ use dosamigos\ckeditor\CKEditor;
 
     <?= $form->errorSummary($model); ?>
 
-    <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
+    <?= $form->field($model, 'name_ru')->textInput(['maxlength' => true]) ?>
+
+    <?= $form->field($model, 'name_en')->textInput(['maxlength' => true]) ?>
 
     <?= $form->field($model, 'poster_file')->fileInput() ?>
 
-    <?= $form->field($model, 'description')->widget(CKEditor::className(), [
+    <?= $form->field($model, 'description_ru')->widget(CKEditor::className(), [
+        'options' => ['rows' => 6],
+        'preset' => 'full'
+    ]) ?>
+
+    <?= $form->field($model, 'description_en')->widget(CKEditor::className(), [
         'options' => ['rows' => 6],
         'preset' => 'full'
     ]) ?>

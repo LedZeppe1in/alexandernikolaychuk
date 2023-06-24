@@ -102,7 +102,14 @@ $this->title = Yii::t('app', 'PROJECTS_PAGE_TITLE');
                         </div>
                     <?php endif; ?>
                     <div class="col-md-6 text-center">
-                        <h3 class="title"><?= $item->name ?></h3>
+                          <h3 class="title">
+                              <?php
+                                  if (Yii::$app->language == 'ru-RU')
+                                      echo $item->name_ru;
+                                  else
+                                      echo $item->name_en;
+                              ?>
+                        </h3>
                         <hr>
                         <?= Html::a(Yii::t('app', 'BUTTON_LEARN_MORE'),
                             ['project-view', 'id' => $item->id],

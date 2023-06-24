@@ -90,14 +90,30 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
         <?php foreach ($model as $item): ?>
             <div class="col-sm-10 col-sm-offset-1 disc">
                 <div class="row">
-                    <?php if ($item->cover !== null): ?>
-                        <div class="col-md-6">
-                        <?= Html::img('@web/uploads/album-cover/' . $item->id . '/' . basename($item->cover),
-                            ['class' => 'img-responsive center-block cover']); ?>
-                        </div>
+                    <?php if (Yii::$app->language == 'ru-RU'): ?>
+                        <?php if ($item->cover_ru !== null): ?>
+                            <div class="col-md-6">
+                            <?= Html::img('@web/uploads/album-cover-ru/' . $item->id . '/' . basename($item->cover_ru),
+                                ['class' => 'img-responsive center-block cover']); ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <?php if ($item->cover_en !== null): ?>
+                            <div class="col-md-6">
+                                <?= Html::img('@web/uploads/album-cover-en/' . $item->id . '/' . basename($item->cover_en),
+                                    ['class' => 'img-responsive center-block cover']); ?>
+                            </div>
+                        <?php endif; ?>
                     <?php endif; ?>
                     <div class="col-md-6 text-center">
-                        <h3 class="title"><?= $item->name ?></h3>
+                        <h3 class="title">
+                            <?php
+                                if (Yii::$app->language == 'ru-RU')
+                                    echo $item->name_ru;
+                                else
+                                    echo $item->name_en;
+                            ?>
+                        </h3>
                         <hr>
                         <?php if ($item->links): ?>
                             <div class="description">

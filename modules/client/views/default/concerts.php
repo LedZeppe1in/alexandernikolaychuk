@@ -102,8 +102,14 @@ $this->title = Yii::t('app', 'CONCERTS_PAGE_TITLE');
                                 <?= Html::img('@web/uploads/concert-poster/' . $item->id . '/' . basename($item->poster),
                                     ['class' => 'img-responsive center-block post-cover']); ?>
                             <?php endif; ?>
-                            <?php if ($item->name): ?>
-                                <h3 class="post-title"><?= $item->name ?></h3>
+                            <?php if (Yii::$app->language == 'ru-RU'): ?>
+                                <?php if ($item->name_ru): ?>
+                                    <h3 class="post-title"><?= $item->name_ru ?></h3>
+                                <?php endif; ?>
+                            <?php else: ?>
+                                <?php if ($item->name_en): ?>
+                                    <h3 class="post-title"><?= $item->name_en ?></h3>
+                                <?php endif; ?>
                             <?php endif; ?>
                             <?php
                                 if ($item->links) {

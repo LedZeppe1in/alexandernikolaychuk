@@ -77,15 +77,31 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
 <div class="container">
     <div class="row">
         <div class="text-center">
-            <h1 class="section-header"><?= $model->name ?></h1>
+            <h1 class="section-header">
+                <?php
+                    if (Yii::$app->language == 'ru-RU')
+                        echo $model->name_ru;
+                    else
+                        echo $model->name_en;
+                ?>
+            </h1>
         </div>
     </div><br />
     <div class="row">
-        <?php if ($model->cover !== null): ?>
-            <div class="col-sm-6">
-                <?= Html::img('@web/uploads/album-cover/' . $model->id . '/' . basename($model->cover),
-                    ['class' => 'img-responsive center-block']); ?>
-            </div>
+        <?php if (Yii::$app->language == 'ru-RU'): ?>
+            <?php if ($model->cover_ru !== null): ?>
+                <div class="col-sm-6">
+                    <?= Html::img('@web/uploads/album-cover-ru/' . $model->id . '/' . basename($model->cover_ru),
+                        ['class' => 'img-responsive center-block']); ?>
+                </div>
+            <?php endif; ?>
+        <?php else: ?>
+            <?php if ($model->cover_en !== null): ?>
+                <div class="col-sm-6">
+                    <?= Html::img('@web/uploads/album-cover-en/' . $model->id . '/' . basename($model->cover_en),
+                        ['class' => 'img-responsive center-block']); ?>
+                </div>
+            <?php endif; ?>
         <?php endif; ?>
         <div class="col-sm-6">
             <div class="description">
@@ -124,8 +140,12 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
             </div><br />
             <div class="description music-description">
                 <?php
-                    if ($model->description)
-                        echo $model->description;
+                    if (Yii::$app->language == 'ru-RU')
+                        if ($model->description_ru)
+                            echo $model->description_ru;
+                    else
+                        if ($model->description_en)
+                            echo $model->description_en;
                 ?>
             </div>
         </div>

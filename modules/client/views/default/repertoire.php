@@ -96,10 +96,22 @@ $this->title = Yii::t('app', 'REPERTOIRE_PAGE_TITLE');
                     <?php foreach ($concert_repertoire as $item): ?>
                         <div class="section">
                             <div class="section-composition">
-                                <h3 class="section-title"><?= $item->name ?></h3>
+                                <h3 class="section-title">
+                                    <?php
+                                        if (Yii::$app->language == 'ru-RU')
+                                            echo $item->name_ru;
+                                        else
+                                            echo $item->name_en;
+                                    ?>
+                                </h3>
                             </div>
                             <div class="section-composition">
-                                <?= $item->composition_list ?>
+                                <?php
+                                    if (Yii::$app->language == 'ru-RU')
+                                        echo $item->composition_list_ru;
+                                    else
+                                        echo $item->composition_list_en;
+                                ?>
                             </div>
                         </div>
                     <?php endforeach; ?>
@@ -114,10 +126,22 @@ $this->title = Yii::t('app', 'REPERTOIRE_PAGE_TITLE');
                     <?php foreach ($orchestra_repertoire as $item): ?>
                         <div class="section">
                             <div class="section-composition">
-                                <h3 class="section-title"><?= $item->name ?></h3>
+                                <h3 class="section-title">
+                                    <?php
+                                        if (Yii::$app->language == 'ru-RU')
+                                            echo $item->name_ru;
+                                        else
+                                            echo $item->name_en;
+                                    ?>
+                                </h3>
                             </div>
                             <div class="section-composition">
-                                <?= $item->composition_list ?>
+                                <?php
+                                    if (Yii::$app->language == 'ru-RU')
+                                        echo $item->composition_list_ru;
+                                    else
+                                        echo $item->composition_list_en;
+                                ?>
                             </div>
                         </div>
                     <?php endforeach; ?>

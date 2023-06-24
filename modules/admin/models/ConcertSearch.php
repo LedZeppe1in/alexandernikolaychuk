@@ -17,7 +17,7 @@ class ConcertSearch extends Concert
     {
         return [
             [['id', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'poster', 'links'], 'safe'],
+            [['name_ru', 'name_en', 'poster', 'links'], 'safe'],
         ];
     }
 
@@ -67,7 +67,8 @@ class ConcertSearch extends Concert
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['ilike', 'name', $this->name])
+        $query->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en])
             ->andFilterWhere(['ilike', 'poster', $this->poster])
             ->andFilterWhere(['ilike', 'links', $this->links]);
 

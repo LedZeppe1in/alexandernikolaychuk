@@ -77,7 +77,14 @@ $this->title = Yii::t('app', 'PROJECT_PAGE_TITLE');
 <div class="container">
     <div class="row">
         <div class="text-center">
-            <h1 class="section-header"><?= $model->name ?></h1>
+            <h1 class="section-header">
+                <?php
+                    if (Yii::$app->language == 'ru-RU')
+                        echo $model->name_ru;
+                    else
+                        echo $model->name_en;
+                ?>
+            </h1>
         </div>
     </div><br />
     <div class="row">
@@ -90,8 +97,10 @@ $this->title = Yii::t('app', 'PROJECT_PAGE_TITLE');
         <div class="col-sm-6">
             <div class="description project-description">
                 <?php
-                    if ($model->description)
-                        echo $model->description;
+                    if (Yii::$app->language == 'ru-RU')
+                        echo $model->description_ru;
+                    else
+                        echo $model->description_en;
                 ?>
             </div>
         </div>
@@ -105,48 +114,64 @@ $this->title = Yii::t('app', 'PROJECT_PAGE_TITLE');
         <?php foreach ($model->projectAlbums as $item): ?>
             <div class="col-sm-10 col-sm-offset-1 disc">
                 <div class="row">
-                    <?php if ($item->musicAlbum->cover !== null): ?>
-                        <div class="col-md-6">
-                            <?= Html::img('@web/uploads/album-cover/' . $item->musicAlbum->id . '/' .
-                                basename($item->musicAlbum->cover), ['class' => 'img-responsive center-block cover']); ?>
-                        </div>
+                    <?php if (Yii::$app->language == 'ru-RU'): ?>
+                        <?php if ($item->musicAlbum->cover_ru !== null): ?>
+                            <div class="col-md-6">
+                                <?= Html::img('@web/uploads/album-cover-ru/' . $item->musicAlbum->id . '/' .
+                                    basename($item->musicAlbum->cover_ru), ['class' => 'img-responsive center-block cover']); ?>
+                            </div>
+                        <?php endif; ?>
+                    <?php else: ?>
+                        <?php if ($item->musicAlbum->cover_en !== null): ?>
+                            <div class="col-md-6">
+                                <?= Html::img('@web/uploads/album-cover-en/' . $item->musicAlbum->id . '/' .
+                                    basename($item->musicAlbum->cover_en), ['class' => 'img-responsive center-block cover']); ?>
+                            </div>
+                        <?php endif; ?>
                     <?php endif; ?>
                     <div class="col-md-6 text-center">
-                        <h3 class="title"><?= $item->musicAlbum->name ?></h3>
+                        <h3 class="title">
+                            <?php
+                                if (Yii::$app->language == 'ru-RU')
+                                    echo $item->musicAlbum->name_ru;
+                                else
+                                    echo $item->musicAlbum->name_en;
+                            ?>
+                        </h3>
                         <hr>
                         <?php if ($item->musicAlbum->links): ?>
                             <div class="description">
                                 <?php
-                                $links = explode(',', $item->musicAlbum->links);
-                                $str = '';
-                                foreach($links as $link) {
-                                    $defined = false;
-                                    if ($str != '')
-                                        $str .= ' • ';
-                                    $pos = strripos($link, 'apple');
-                                    if ($pos !== false) {
-                                        $defined = true;
-                                        $str .= Html::a('<p class="fa-brands fa-apple fa-2xl"></p>', $link);
+                                    $links = explode(',', $item->musicAlbum->links);
+                                    $str = '';
+                                    foreach($links as $link) {
+                                        $defined = false;
+                                        if ($str != '')
+                                            $str .= ' • ';
+                                        $pos = strripos($link, 'apple');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-apple fa-2xl"></p>', $link);
+                                        }
+                                        $pos = strripos($link, 'yandex');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-yandex fa-2xl"></p>', $link);
+                                        }
+                                        $pos = strripos($link, 'spotify');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-spotify fa-2xl"></p>', $link);
+                                        }
+                                        $pos = strripos($link, 'vk.com');
+                                        if ($pos !== false) {
+                                            $defined = true;
+                                            $str .= Html::a('<p class="fa-brands fa-vk fa-2xl"></p>', $link);
+                                        }
+                                        if (!$defined)
+                                            $str .= Html::a('<p class="fa-solid fa-music fa-2xl"></p>', $link);
                                     }
-                                    $pos = strripos($link, 'yandex');
-                                    if ($pos !== false) {
-                                        $defined = true;
-                                        $str .= Html::a('<p class="fa-brands fa-yandex fa-2xl"></p>', $link);
-                                    }
-                                    $pos = strripos($link, 'spotify');
-                                    if ($pos !== false) {
-                                        $defined = true;
-                                        $str .= Html::a('<p class="fa-brands fa-spotify fa-2xl"></p>', $link);
-                                    }
-                                    $pos = strripos($link, 'vk.com');
-                                    if ($pos !== false) {
-                                        $defined = true;
-                                        $str .= Html::a('<p class="fa-brands fa-vk fa-2xl"></p>', $link);
-                                    }
-                                    if (!$defined)
-                                        $str .= Html::a('<p class="fa-solid fa-music fa-2xl"></p>', $link);
-                                }
-                                echo $str;
+                                    echo $str;
                                 ?>
                             </div>
                         <?php endif; ?>

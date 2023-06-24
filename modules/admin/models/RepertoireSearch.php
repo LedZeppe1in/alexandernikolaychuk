@@ -17,7 +17,7 @@ class RepertoireSearch extends Repertoire
     {
         return [
             [['id', 'created_at', 'updated_at', 'type'], 'integer'],
-            [['name', 'composition_list '], 'safe'],
+            [['name_ru', 'name_en', 'composition_list_ru', 'composition_list_en'], 'safe'],
         ];
     }
 
@@ -68,8 +68,10 @@ class RepertoireSearch extends Repertoire
             'type' => $this->type,
         ]);
 
-        $query->andFilterWhere(['ilike', 'name', $this->name])
-            ->andFilterWhere(['ilike', 'composition_list', $this->composition_list ]);
+        $query->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en])
+            ->andFilterWhere(['ilike', 'composition_list_ru', $this->composition_list_ru])
+            ->andFilterWhere(['ilike', 'composition_list_en', $this->composition_list_en]);
 
         return $dataProvider;
     }

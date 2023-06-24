@@ -11,8 +11,10 @@ use yii\behaviors\TimestampBehavior;
  * @property int $id
  * @property int $created_at
  * @property int $updated_at
- * @property string $name
- * @property string|null $description
+ * @property string $name_ru
+ * @property string $name_en
+ * @property string|null $description_ru
+ * @property string|null $description_en
  * @property string|null $poster
  *
  * @property ProjectAlbum[] $projectAlbums
@@ -36,9 +38,9 @@ class Project extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name'], 'required'],
-            [['description', 'poster'], 'string'],
-            [['name'], 'string', 'max' => 255],
+            [['name_ru', 'name_en'], 'required'],
+            [['description_ru', 'description_en', 'poster'], 'string'],
+            [['name_ru', 'name_en'], 'string', 'max' => 255],
             ['poster_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
@@ -52,8 +54,10 @@ class Project extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'PROJECT_MODEL_ID'),
             'created_at' => Yii::t('app', 'PROJECT_MODEL_CREATED_AT'),
             'updated_at' => Yii::t('app', 'PROJECT_MODEL_UPDATED_AT'),
-            'name' => Yii::t('app', 'PROJECT_MODEL_NAME'),
-            'description' => Yii::t('app', 'PROJECT_MODEL_DESCRIPTION'),
+            'name_ru' => Yii::t('app', 'PROJECT_MODEL_NAME_RU'),
+            'name_en' => Yii::t('app', 'PROJECT_MODEL_NAME_EN'),
+            'description_ru' => Yii::t('app', 'PROJECT_MODEL_DESCRIPTION_RU'),
+            'description_en' => Yii::t('app', 'PROJECT_MODEL_DESCRIPTION_EN'),
             'poster' => Yii::t('app', 'PROJECT_MODEL_POSTER'),
             'poster_file' => Yii::t('app', 'PROJECT_MODEL_POSTER'),
         ];

@@ -12,12 +12,16 @@ use yii\helpers\ArrayHelper;
  * @property int $id
  * @property int $created_at
  * @property int $updated_at
- * @property string $name
+ * @property string $name_ru
+ * @property string $name_en
  * @property int $type
- * @property string|null $cover
+ * @property string|null $cover_ru
+ * @property string|null $cover_en
  * @property string|null $links
- * @property string|null $description
- * @property string|null $author
+ * @property string|null $description_ru
+ * @property string|null $description_en
+ * @property string|null $authors_ru
+ * @property string|null $authors_en
  *
  * @property ProjectAlbum[] $projectAlbums
  */
@@ -26,8 +30,9 @@ class MusicAlbum extends \yii\db\ActiveRecord
     const AUTHOR_TYPE = 0;  // Тип альбома "авторский"
     const PROJECT_TYPE = 1; // Тип альбома "проектный"
 
-    public $cover_file; // Файл обложки
-    public $project;    // Проект
+    public $cover_file_ru; // Файл обложки на русском
+    public $cover_file_en; // Файл обложки на английском
+    public $project;       // Проект
 
     /**
      * @return string table name
@@ -43,11 +48,13 @@ class MusicAlbum extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'type'], 'required'],
-            [['cover', 'links', 'description', 'author'], 'string'],
-            [['name'], 'string', 'max' => 255],
+            [['name_ru', 'name_en', 'type'], 'required'],
+            [['cover_ru', 'cover_en', 'links', 'description_ru', 'description_en', 'authors_ru', 'authors_en'],
+                'string'],
+            [['name_ru', 'name_en'], 'string', 'max' => 255],
             [['project'], 'safe'],
-            ['cover_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
+            ['cover_file_ru', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
+            ['cover_file_en', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
 
@@ -60,13 +67,18 @@ class MusicAlbum extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'MUSIC_ALBUM_MODEL_ID'),
             'created_at' => Yii::t('app', 'MUSIC_ALBUM_MODEL_CREATED_AT'),
             'updated_at' => Yii::t('app', 'MUSIC_ALBUM_MODEL_UPDATED_AT'),
-            'name' => Yii::t('app', 'MUSIC_ALBUM_MODEL_NAME'),
+            'name_ru' => Yii::t('app', 'MUSIC_ALBUM_MODEL_NAME_RU'),
+            'name_en' => Yii::t('app', 'MUSIC_ALBUM_MODEL_NAME_EN'),
             'type' => Yii::t('app', 'MUSIC_ALBUM_MODEL_TYPE'),
-            'cover' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER'),
+            'cover_ru' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER_RU'),
+            'cover_en' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER_EN'),
             'links' => Yii::t('app', 'MUSIC_ALBUM_MODEL_LINKS'),
-            'description' => Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION'),
-            'author' => Yii::t('app', 'MUSIC_ALBUM_MODEL_AUTHOR'),
-            'cover_file' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER'),
+            'description_ru' => Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION_RU'),
+            'description_en' => Yii::t('app', 'MUSIC_ALBUM_MODEL_DESCRIPTION_EN'),
+            'authors_ru' => Yii::t('app', 'MUSIC_ALBUM_MODEL_AUTHORS_RU'),
+            'authors_en' => Yii::t('app', 'MUSIC_ALBUM_MODEL_AUTHORS_EN'),
+            'cover_file_ru' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER_RU'),
+            'cover_file_en' => Yii::t('app', 'MUSIC_ALBUM_MODEL_COVER_EN'),
             'project' => Yii::t('app', 'MUSIC_ALBUM_MODEL_PROJECT'),
         ];
     }

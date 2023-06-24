@@ -12,9 +12,11 @@ use yii\helpers\ArrayHelper;
  * @property int $id
  * @property int $created_at
  * @property int $updated_at
- * @property string $name
+ * @property string $name_ru
+ * @property string $name_en
  * @property int $type
- * @property string $composition_list
+ * @property string $composition_list_ru
+ * @property string $composition_list_en
  */
 class Repertoire extends \yii\db\ActiveRecord
 {
@@ -35,9 +37,9 @@ class Repertoire extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['name', 'type', 'composition_list'], 'required'],
-            [['composition_list'], 'string'],
-            [['name'], 'string', 'max' => 255],
+            [['name_ru', 'name_en', 'type', 'composition_list_ru', 'composition_list_en'], 'required'],
+            [['composition_list_ru', 'composition_list_en'], 'string'],
+            [['name_ru', 'name_en'], 'string', 'max' => 255],
         ];
     }
 
@@ -50,9 +52,11 @@ class Repertoire extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'REPERTOIRE_MODEL_ID'),
             'created_at' => Yii::t('app', 'REPERTOIRE_MODEL_CREATED_AT'),
             'updated_at' => Yii::t('app', 'REPERTOIRE_MODEL_UPDATED_AT'),
-            'name' => Yii::t('app', 'REPERTOIRE_MODEL_NAME'),
+            'name_ru' => Yii::t('app', 'REPERTOIRE_MODEL_NAME_RU'),
+            'name_en' => Yii::t('app', 'REPERTOIRE_MODEL_NAME_EN'),
             'type' => Yii::t('app', 'REPERTOIRE_MODEL_TYPE'),
-            'composition_list' => Yii::t('app', 'REPERTOIRE_MODEL_COMPOSITION_LIST')
+            'composition_list_ru' => Yii::t('app', 'REPERTOIRE_MODEL_COMPOSITION_LIST_RU'),
+            'composition_list_en' => Yii::t('app', 'REPERTOIRE_MODEL_COMPOSITION_LIST_EN')
         ];
     }
 

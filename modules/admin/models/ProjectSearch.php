@@ -17,7 +17,7 @@ class ProjectSearch extends Project
     {
         return [
             [['id', 'created_at', 'updated_at'], 'integer'],
-            [['name', 'description', 'poster'], 'safe'],
+            [['name_ru', 'name_en', 'description_ru', 'description_en', 'poster'], 'safe'],
         ];
     }
 
@@ -67,8 +67,10 @@ class ProjectSearch extends Project
             'updated_at' => $this->updated_at,
         ]);
 
-        $query->andFilterWhere(['ilike', 'name', $this->name])
-            ->andFilterWhere(['ilike', 'description', $this->description])
+        $query->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en])
+            ->andFilterWhere(['ilike', 'description_ru', $this->description_ru])
+            ->andFilterWhere(['ilike', 'description_en', $this->description_en])
             ->andFilterWhere(['ilike', 'poster', $this->poster]);
 
         return $dataProvider;

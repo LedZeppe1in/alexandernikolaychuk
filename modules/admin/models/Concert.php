@@ -11,7 +11,8 @@ use yii\behaviors\TimestampBehavior;
  * @property int $id
  * @property int $created_at
  * @property int $updated_at
- * @property string|null $name
+ * @property string|null $name_ru
+ * @property string|null $name_en
  * @property string|null $poster
  * @property string|null $links
  */
@@ -55,9 +56,9 @@ class Concert extends \yii\db\ActiveRecord
     {
         return [
             [['poster', 'links'], 'string'],
-            [['name'], 'string', 'max' => 255],
-            ['name', 'either', 'skipOnEmpty'=>!$this->isNewRecord, 'params' => ['other' => 'poster_file']],
-            ['poster_file', 'either', 'skipOnEmpty'=>!$this->isNewRecord, 'params' => ['other' => 'name']],
+            [['name_ru', 'name_en'], 'string', 'max' => 255],
+            [['name_ru', 'name_en'], 'either', 'skipOnEmpty'=>!$this->isNewRecord, 'params' => ['other' => 'poster_file']],
+            ['poster_file', 'either', 'skipOnEmpty'=>!$this->isNewRecord, 'params' => ['other' => ['name_ru', 'name_en']]],
             ['poster_file', 'file', 'checkExtensionByMimeType' => false, 'extensions' => ['jpg', 'jpeg', 'png']],
         ];
     }
@@ -71,7 +72,8 @@ class Concert extends \yii\db\ActiveRecord
             'id' => Yii::t('app', 'CONCERT_MODEL_ID'),
             'created_at' => Yii::t('app', 'CONCERT_MODEL_CREATED_AT'),
             'updated_at' => Yii::t('app', 'CONCERT_MODEL_UPDATED_AT'),
-            'name' => Yii::t('app', 'CONCERT_MODEL_NAME'),
+            'name_ru' => Yii::t('app', 'CONCERT_MODEL_NAME_RU'),
+            'name_en' => Yii::t('app', 'CONCERT_MODEL_NAME_EN'),
             'poster' => Yii::t('app', 'CONCERT_MODEL_POSTER'),
             'links' => Yii::t('app', 'CONCERT_MODEL_LINKS'),
             'poster_file' => Yii::t('app', 'CONCERT_MODEL_POSTER'),

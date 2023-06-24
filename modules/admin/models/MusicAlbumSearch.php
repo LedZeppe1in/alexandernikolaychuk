@@ -17,7 +17,8 @@ class MusicAlbumSearch extends MusicAlbum
     {
         return [
             [['id', 'created_at', 'updated_at', 'type'], 'integer'],
-            [['name', 'cover', 'links', 'description', 'author'], 'safe'],
+            [['name_ru', 'name_en', 'cover_ru', 'cover_en', 'links', 'description_ru', 'description_en',
+                'authors_ru', 'authors_en'], 'safe'],
         ];
     }
 
@@ -68,11 +69,15 @@ class MusicAlbumSearch extends MusicAlbum
             'type' => $this->type,
         ]);
 
-        $query->andFilterWhere(['ilike', 'name', $this->name])
-            ->andFilterWhere(['ilike', 'cover', $this->cover])
+        $query->andFilterWhere(['ilike', 'name_ru', $this->name_ru])
+            ->andFilterWhere(['ilike', 'name_en', $this->name_en])
+            ->andFilterWhere(['ilike', 'cover_ru', $this->cover_ru])
+            ->andFilterWhere(['ilike', 'cover_en', $this->cover_en])
             ->andFilterWhere(['ilike', 'links', $this->links])
-            ->andFilterWhere(['ilike', 'description', $this->description])
-            ->andFilterWhere(['ilike', 'author', $this->author]);
+            ->andFilterWhere(['ilike', 'description_ru', $this->description_ru])
+            ->andFilterWhere(['ilike', 'description_en', $this->description_en])
+            ->andFilterWhere(['ilike', 'authors_ru', $this->authors_ru])
+            ->andFilterWhere(['ilike', 'authors_en', $this->authors_en]);
 
         return $dataProvider;
     }

@@ -81,29 +81,51 @@ class MusicAlbumController extends Controller
 
         if ($this->request->isPost) {
             if ($model->load($this->request->post())) {
-                $file = UploadedFile::getInstance($model, 'cover_file');
-                if ($file && $file->tempName) {
-                    $model->cover_file = $file;
-                    if ($model->validate(['cover_file'])) {
-                        // Формирование пути к файлу обложки
-                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover/';
-                        $fileName = str_replace(' ', '-', $model->cover_file->baseName) . '.' .
-                            $model->cover_file->extension;
-                        $model->cover = $dir . $fileName;
+                $file_ru = UploadedFile::getInstance($model, 'cover_file_ru');
+                if ($file_ru && $file_ru->tempName) {
+                    $model->cover_file_ru = $file_ru;
+                    if ($model->validate(['cover_file_ru'])) {
+                        // Формирование пути к файлу обложки на русском языке
+                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover-ru/';
+                        $fileName = str_replace(' ', '-', $model->cover_file_ru->baseName) . '.' .
+                            $model->cover_file_ru->extension;
+                        $model->cover_ru = $dir . $fileName;
+                    }
+                }
+                $file_en = UploadedFile::getInstance($model, 'cover_file_en');
+                if ($file_en && $file_en->tempName) {
+                    $model->cover_file_en = $file_en;
+                    if ($model->validate(['cover_file_en'])) {
+                        // Формирование пути к файлу обложки на английском языке
+                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover-en/';
+                        $fileName = str_replace(' ', '-', $model->cover_file_en->baseName) . '.' .
+                            $model->cover_file_en->extension;
+                        $model->cover_en = $dir . $fileName;
                     }
                 }
                 // Сохранение данных в БД
                 if ($model->save()) {
-                    if ($model->cover !== null) {
-                        // Создание новой директории для файла обложки
-                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover/' . $model->id . '/';
-                        $fileName = str_replace(' ', '-', $model->cover_file->baseName) . '.' .
-                            $model->cover_file->extension;
+                    if ($model->cover_ru !== null) {
+                        // Создание новой директории для файла обложки на русском языке
+                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover-ru/' . $model->id . '/';
+                        $fileName = str_replace(' ', '-', $model->cover_file_ru->baseName) . '.' .
+                            $model->cover_file_ru->extension;
                         FileHelper::createDirectory($dir);
-                        // Обновление пути к файлу обложки в БД
-                        $model->updateAttributes(['cover' => $dir . $fileName]);
-                        // Сохранение файла обложки на сервере
-                        $model->cover_file->saveAs($dir . $fileName);
+                        // Обновление пути к файлу обложки на русском языке в БД
+                        $model->updateAttributes(['cover_ru' => $dir . $fileName]);
+                        // Сохранение файла обложки на русском языке на сервере
+                        $model->cover_file_ru->saveAs($dir . $fileName);
+                    }
+                    if ($model->cover_en !== null) {
+                        // Создание новой директории для файла обложки на английском языке
+                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover-en/' . $model->id . '/';
+                        $fileName = str_replace(' ', '-', $model->cover_file_en->baseName) . '.' .
+                            $model->cover_file_en->extension;
+                        FileHelper::createDirectory($dir);
+                        // Обновление пути к файлу обложки на английском языке в БД
+                        $model->updateAttributes(['cover_en' => $dir . $fileName]);
+                        // Сохранение файла обложки на английском языке на сервере
+                        $model->cover_file_en->saveAs($dir . $fileName);
                     }
                     // Создание связи музыкального альбома с проектом
                     if ($model->type == MusicAlbum::PROJECT_TYPE) {
@@ -140,33 +162,62 @@ class MusicAlbumController extends Controller
         $model = $this->findModel($id);
 
         if ($this->request->isPost && $model->load($this->request->post()) && $model->save()) {
-            $file = UploadedFile::getInstance($model, 'cover_file');
-            if ($file && $file->tempName) {
-                $model->cover_file = $file;
-                if ($model->validate(['cover_file'])) {
-                    if ($model->cover !== null) {
-                        // Определение директории где расположен файл обложки
-                        $pos = strrpos($model->cover, '/');
-                        $dir = substr($model->cover, 0, $pos) . '/';
-                        // Запоминание нового имя файла афишы
-                        $fileName = str_replace(' ', '-', $model->cover_file->baseName) . '.' .
-                            $model->cover_file->extension;
-                        // Удаление старого файла обложки
-                        unlink($model->cover);
+            $file_ru = UploadedFile::getInstance($model, 'cover_file_ru');
+            if ($file_ru && $file_ru->tempName) {
+                $model->cover_file_ru = $file_ru;
+                if ($model->validate(['cover_file_ru'])) {
+                    if ($model->cover_ru !== null) {
+                        // Определение директории где расположен файл обложки на русском языке
+                        $pos = strrpos($model->cover_ru, '/');
+                        $dir = substr($model->cover_ru, 0, $pos) . '/';
+                        // Запоминание нового имя файла обложки на русском языке
+                        $fileName = str_replace(' ', '-', $model->cover_file_ru->baseName) . '.' .
+                            $model->cover_file_ru->extension;
+                        // Удаление старого файла обложки на русском языке
+                        unlink($model->cover_ru);
                     } else {
-                        // Формирование пути к файлу обложки
-                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover/';
-                        $fileName = str_replace(' ', '-', $model->cover_file->baseName) . '.' .
-                            $model->cover_file->extension;
-                        $model->cover = $dir . $fileName;
-                        // Создание новой директории для файла обложки
+                        // Формирование пути к файлу обложки на русском языке
+                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover-ru/';
+                        $fileName = str_replace(' ', '-', $model->cover_file_ru->baseName) . '.' .
+                            $model->cover_file_ru->extension;
+                        $model->cover_ru = $dir . $fileName;
+                        // Создание новой директории для файла обложки на русском языке
                         $dir .= $model->id . '/';
                         FileHelper::createDirectory($dir);
                     }
-                    // Сохранение нового файла обложки
-                    $model->cover_file->saveAs($dir . $fileName);
-                    // Сохранение нового пути к файлу обложки в БД
-                    $model->updateAttributes(['cover' => $dir . $fileName]);
+                    // Сохранение нового файла обложки на русском языке
+                    $model->cover_file_ru->saveAs($dir . $fileName);
+                    // Сохранение нового пути к файлу обложки на русском языке в БД
+                    $model->updateAttributes(['cover_ru' => $dir . $fileName]);
+                }
+            }
+            $file_en = UploadedFile::getInstance($model, 'cover_file_en');
+            if ($file_en && $file_en->tempName) {
+                $model->cover_file_en = $file_en;
+                if ($model->validate(['cover_file_en'])) {
+                    if ($model->cover_en !== null) {
+                        // Определение директории где расположен файл обложки на английском языке
+                        $pos = strrpos($model->cover_en, '/');
+                        $dir = substr($model->cover_en, 0, $pos) . '/';
+                        // Запоминание нового имя файла обложки на русском языке
+                        $fileName = str_replace(' ', '-', $model->cover_file_en->baseName) . '.' .
+                            $model->cover_file_en->extension;
+                        // Удаление старого файла обложки на английском языке
+                        unlink($model->cover_en);
+                    } else {
+                        // Формирование пути к файлу обложки на английском языке
+                        $dir = Yii::getAlias('@webroot') . '/uploads/album-cover-en/';
+                        $fileName = str_replace(' ', '-', $model->cover_file_en->baseName) . '.' .
+                            $model->cover_file_en->extension;
+                        $model->cover_en = $dir . $fileName;
+                        // Создание новой директории для файла обложки на английском языке
+                        $dir .= $model->id . '/';
+                        FileHelper::createDirectory($dir);
+                    }
+                    // Сохранение нового файла обложки на английском языке
+                    $model->cover_file_en->saveAs($dir . $fileName);
+                    // Сохранение нового пути к файлу обложки на английском языке в БД
+                    $model->updateAttributes(['cover_en' => $dir . $fileName]);
                 }
             }
             // Обновление связи музыкального альбома с проектом
@@ -209,11 +260,18 @@ class MusicAlbumController extends Controller
     public function actionDelete($id)
     {
         $model = $this->findModel($id);
-        if ($model->cover !== null) {
-            // Определение директории где расположен файл обложки
-            $pos = strrpos($model->cover, '/');
-            $dir = substr($model->cover, 0, $pos);
-            // Удаление файла обложки и директории где она хранилась
+        if ($model->cover_ru !== null) {
+            // Определение директории где расположен файл обложки на русском языке
+            $pos = strrpos($model->cover_ru, '/');
+            $dir = substr($model->cover_ru, 0, $pos);
+            // Удаление файла обложки на русском языке и директории где она хранилась
+            FileHelper::removeDirectory($dir);
+        }
+        if ($model->cover_en !== null) {
+            // Определение директории где расположен файл обложки на английском языке
+            $pos = strrpos($model->cover_en, '/');
+            $dir = substr($model->cover_en, 0, $pos);
+            // Удаление файла обложки на английском языке и директории где она хранилась
             FileHelper::removeDirectory($dir);
         }
         $model->delete(); // Удалние записи из БД

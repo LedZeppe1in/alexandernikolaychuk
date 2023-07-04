@@ -141,11 +141,9 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
             <div class="description music-description">
                 <?php
                     if (Yii::$app->language == 'ru-RU')
-                        if ($model->description_ru)
-                            echo $model->description_ru;
+                        echo $model->description_ru;
                     else
-                        if ($model->description_en)
-                            echo $model->description_en;
+                        echo $model->description_en;
                 ?>
             </div>
         </div>

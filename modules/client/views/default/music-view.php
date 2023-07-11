@@ -103,7 +103,7 @@ $this->title = Yii::t('app', 'MUSIC_PAGE_TITLE');
                 </div>
             <?php endif; ?>
         <?php endif; ?>
-        <div class="col-sm-6">
+        <div class="col-sm-6"><br />
             <div class="description">
                 <?php if ($model->links) {
                     $links = explode(',', $model->links);

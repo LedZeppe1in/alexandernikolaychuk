@@ -70,7 +70,7 @@ $this->title = Yii::t('app', 'PROJECTS_PAGE_TITLE');
 </nav>
 
 <div class="container cover-container" style="z-index:;">
-    <div class="cover" style="background-image: url(/images/project.jpg); background-position:% 50%;"></div>
+    <div class="cover cover-project" style="background-image: url(/images/project.jpg); background-position:% 50%;"></div>
     <div class="title-block">
         <div class="row title-row">
             <div class="col-sm-12 title-col">

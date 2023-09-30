@@ -61,6 +61,12 @@ a.desc:after {
         width: 100%;
         padding: 10px 0;
     }
+    .cover-concert {
+        background-position: 80% 50% !important;
+    }
+    .cover-project {
+        background-position: 70% 50% !important;
+    }
 }
 
 .nav > li > form > button.logout:focus,

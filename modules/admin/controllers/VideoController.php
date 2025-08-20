@@ -75,7 +75,12 @@ class VideoController extends Controller
         $model = new Video();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()) && $model->save()) {
+            if ($model->load($this->request->post()))
+                $is_rutube = strripos($model->link, 'rutube');
+                if ($is_rutube !== false)
+                    $model->link = substr_replace($model->link, 'play/embed', 18, 5);
+            if ($model->save()) {
+                // Сохранение данных в БД
                 Yii::$app->getSession()->setFlash('success',
                     Yii::t('app', 'VIDEO_ADMIN_PAGE_MESSAGE_CREATE_VIDEO'));
 

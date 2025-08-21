@@ -75,10 +75,21 @@ class VideoController extends Controller
         $model = new Video();
 
         if ($this->request->isPost) {
-            if ($model->load($this->request->post()))
+            if ($model->load($this->request->post())) {
+                // Исправление ссылки на Rutube
                 $is_rutube = strripos($model->link, 'rutube');
                 if ($is_rutube !== false)
                     $model->link = substr_replace($model->link, 'play/embed', 18, 5);
+                // Исправление ссылки на vkvideo
+                $is_vkvideo = strripos($model->link, 'vkvideo');
+                $is_vk = strripos($model->link, 'vk.com');
+                if ($is_vkvideo !== false or $is_vk !== false) {
+                    $position = strpos($model->link, '_');
+                    $model->link = substr_replace($model->link, '&id=', $position, 1);
+                    $position = strpos($model->link, '/video');
+                    $model->link = substr_replace($model->link, '_ext.php?oid=', ($position + 6), 0);
+                }
+            }
             if ($model->save()) {
                 // Сохранение данных в БД
                 Yii::$app->getSession()->setFlash('success',
